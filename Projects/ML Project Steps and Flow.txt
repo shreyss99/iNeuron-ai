@@ -1,0 +1,139 @@
+ML Project Explanantion:
+
+Steps:
+
+1) High Level Design Document
+2) Low Level Design Document
+3) Architecture Document
+4) Wireframe Document
+5) Key Performance Indicators
+6) Pipeline development
+7) Coding
+8) Audit
+9) Production
+10) Hypercare
+
+
+At the start, the Design Team will engage with the clients and get to understand their requirements. This is Initial Requirement Gathering and Analysis stage. This is done to check if the team is feasible / capable to undertake the project. Once the feasibility is checked, then the above steps are carried in order.
+
+
+Data Sharing Agreement:
+- Number of files
+- Mode of data transfer
+- Feature of details
+- Language
+
+
+(1) High Level Design Document:
+
+    a) low level requirement to figure the end goal
+    b) business understanding
+        - understand the business
+        - dataset from client from database (DB - SQL based, NoSQL based, Storage - S3, BLOB, from sensors or devices, from API,                       transactional records, from messaging system, SAP system, ER systems) not in Excel file 
+        - understanding the features present in data
+        - write 5-6 column names for interview purpose and understand the source of data
+    c) identify the frequency of dataset
+        - batch: once in day / week / month etc.
+        - mini batch: very small batch
+        - streaming: continuous data
+    d) number of files 
+    e) brief dataset description
+    f) diagram of complete existing infrastructure
+    
+    
+(2) Low Level Design Document:
+
+    a) basic architecture of our own system
+    b) mention the connectivity from client datasource to our own system datasource
+    c) perform Data Validation checks - to be done based on DSA. If it fails, thendemp as bad data or else dump in our own database
+        - file name check
+        - extension check
+        - number of columns check
+        - type of feature check
+        - name of column check
+        - null check
+    d) perform Data Transformation
+        - date time transformation
+        - language transformation
+        - categorical transformation
+    e) perform Data Aggregation
+        - extract the necessary data for next steps
+    f) perform Data Preprocessing
+        - standardization
+        - normalization
+        - train_test_split
+        - dimensionality reduction
+    g) model development
+        - check if the dataset is suitable for applying the single machine learning model or it needs customised machine learning approach.
+        - If the dataset variance is too high, we start by creating clusters of our data.
+        - for each cluster we then develop multi model system for each cluster.
+    h) model testing
+    i) model serving / deployment
+        - depends on client requirements how the model needs to be delivered
+        - dockerise, containerise
+    j) model monitoring
+        - set an alarm based on threshold
+    k) model retraining pipeline
+        - model accuracy decreases over time, so it will not understand the dataset incomimg
+        - so need to set strategy for model retraining for new data
+    l) model redeployment
+    
+    
+(3) Architecture Document:
+    
+    Different type of environment for developmet, user acceptance testing and production
+
+    a) latency
+    - for 1 input dta what is the total time to give prediction
+    b) frequency of dataset
+    c) scalability
+    d) security
+    
+
+(4) Wireframe Document:
+
+    a) how the final product / system look like
+    b) whether the entire pipeline / model be in form of API / Web Application or embedded into another system.
+    
+    
+(5) Kep Performance Indicators:
+
+    a) create multiple dashboards
+    b) represent all analytical information on dashboards
+    c) it represents the expectation of the project
+    
+    
+(6) Complete Pipeline:
+
+    a) we create the complete pipeline
+    
+    
+(7) Coding:
+    
+    a) task is divided into team of individuals to perform the different parts of the complete pipeline - calidation, transformation, model        building, retraining etc.
+    b) all try to write their respective codes and then merging happens after auditing.
+    
+    
+(8) Auditing:
+
+    a) done by senior member to check of the coding is done as per the coding standards - class names are meaningful, proper documentation          and comments are included.
+    b) architecture and security audit also takes place.
+    
+    
+(9) Production:
+
+
+(10) Hypercare:
+
+    a) any bugs / glitches will be solved based on the agreement.
+    
+    
+ML OPS:
+
+
+     
+        
+        
+
+
+    
