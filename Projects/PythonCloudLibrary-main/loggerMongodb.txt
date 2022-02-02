@@ -1,0 +1,3 @@
+Error occured in class: MongoDBOperation method:insertRecordInCollection error:Failed to insert
+record Error occured in class: MongoDBOperation method:isRecordPresent error:Failed to insert
+ record cannot encode object: datetime.date(2021, 3, 9), of type: <class 'datetime.date'>

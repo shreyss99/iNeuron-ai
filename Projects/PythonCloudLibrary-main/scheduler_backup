@@ -1,0 +1,166 @@
+
+@socket_io.on('job_at_specific_time', namespace="/schedule_job")
+def job_at_specific_time(data):
+    print('job_at_specific_time')
+    log_writer = None
+    execution_id = str(uuid.uuid4())
+    emit("job_response", {'message': "Entered into job_at_specific_time"},
+         namespace="/schedule_job")
+    try:
+
+        if 'email_address' in session:
+            project_id = int(data['project_id'])
+            job_name = data['job_name']
+            date_time = data['date_time']
+            executed_by = session['email_address']
+            action_name = data['action_name'].split(',')[:-1]
+            log_writer = LogRequest(executed_by=executed_by, execution_id=execution_id)
+            log_writer.log_start(dict(data))
+            emit("job_response", {'message': "Started creating job".format(job_name)},
+                 namespace="/schedule_job")
+            res = sch.add_job_at_time(date_time=date_time, job_name=job_name, project_id=project_id,
+                                      email_address=executed_by,action_name=action_name)
+            log_writer.log_stop({'status': True, })
+
+            emit("job_response", {'message': "Job {} added successfully".format(job_name)},
+                 namespace="/schedule_job")
+        else:
+            raise Exception("Please first login to you account")
+    except Exception as e:
+        if log_writer is not None:
+            log_writer.log_stop({'status': False, 'error_message': str(e)})
+            log_exception = LogExceptionDetail(log_writer.executed_by, log_writer.execution_id)
+            log_exception.log(str(e))
+        emit("job_response", {'message': str(e)}, namespace="/schedule_job")
+
+
+@socket_io.on('job_within_a_day', namespace="/schedule_job")
+def job_within_a_day(data):
+    print("job_within_a_day")
+    """
+         is_reoccurring:is_reoccurring,
+     job_name:job_name,
+     project_id:project_id,
+     time_type:time_type,
+     time_value:time_value,
+    :param data:
+    :return:
+    """
+    log_writer = None
+    execution_id = str(uuid.uuid4())
+    try:
+
+        if 'email_address' in session:
+            project_id = int(data['project_id'])
+            job_name = data['job_name']
+            time_type = data['time_type']
+            time_value = int(data['time_value'])
+            is_reoccurring = data['is_reoccurring']
+            executed_by = session['email_address']
+            action_name = data['action_name'].split(',')[:-1]
+            log_writer = LogRequest(executed_by=executed_by, execution_id=execution_id)
+            log_writer.log_start(dict(data))
+            if is_reoccurring == 'No':
+                date_time_val = None
+                if time_type == 'hour':
+                    date_time_val = datetime.now() + timedelta(hours=time_value)
+                if time_type == 'minute':
+                    date_time_val = datetime.now() + timedelta(minutes=time_value)
+                if time_type == 'second':
+                    date_time_val = datetime.now() + timedelta(seconds=time_value)
+                    if date_time_val is None:
+                        raise Exception("Date time required!")
+                date_time_val = str(date_time_val)
+                res = sch.add_job_at_time(date_time=date_time_val, job_name=job_name, project_id=project_id,
+                                          email_address=executed_by,action_name = data['action_name'].split(',')[:-1])
+            else:
+                if time_type == 'hour':
+                    sch.add_recurring_job_in_hour(time_value, job_name=job_name, project_id=project_id,
+                                                  email_address=executed_by,action_name = data['action_name'].split(',')[:-1])
+                if time_type == 'minute':
+                    sch.add_recurring_job_in_minute(time_value, job_name=job_name, project_id=project_id,
+                                                    email_address=executed_by,action_name = data['action_name'].split(',')[:-1])
+                if time_type == 'second':
+                    sch.add_recurring_job_in_second(time_value, job_name=job_name, project_id=project_id,
+                                                    email_address=executed_by,action_name = data['action_name'].split(',')[:-1])
+
+            log_writer.log_stop({'status': True, })
+
+            emit("job_response", {'message': "Job {} added successfully".format(job_name)},
+                 namespace="/schedule_job")
+        else:
+            raise Exception("Please first login to you account")
+    except Exception as e:
+        if log_writer is not None:
+            log_writer.log_stop({'status': False, 'error_message': str(e)})
+            log_exception = LogExceptionDetail(log_writer.executed_by, log_writer.execution_id)
+            log_exception.log(str(e))
+        emit("job_response", {'message': str(e)}, namespace="/schedule_job")
+
+
+@socket_io.on('job_on_week_day', namespace="/schedule_job")
+def job_on_week_day(data):
+    print("job_on_week_day")
+    log_writer = None
+    execution_id = str(uuid.uuid4())
+    try:
+
+        if 'email_address' in session:
+            project_id = int(data['project_id'])
+            job_name = data['job_name']
+            week_day_names = data['week_day_names'][:-1]
+            is_reoccurring = data['is_reoccurring']
+            executed_by = session['email_address']
+            log_writer = LogRequest(executed_by=executed_by, execution_id=execution_id)
+            log_writer.log_start(dict(data))
+
+            sch.add_recurring_job_weekly_basis(is_reoccurring=is_reoccurring, days_of_week=week_day_names,
+                                               job_name=job_name, project_id=project_id, email_address=executed_by,
+                                               is_record_inserted=False,
+                                               action_name=data['action_name'].split(',')[:-1]
+                                               )
+            log_writer.log_stop({'status': True, })
+
+            emit("job_response", {'message': "Job {} added successfully".format(job_name)},
+                 namespace="/schedule_job")
+
+    except Exception as e:
+        if log_writer is not None:
+            log_writer.log_stop({'status': False, 'error_message': str(e)})
+            log_exception = LogExceptionDetail(log_writer.executed_by, log_writer.execution_id)
+            log_exception.log(str(e))
+        emit("job_response", {'message': str(e)}, namespace="/schedule_job")
+
+    """
+    schedule_job_socket.emit('job_on_week_day',{
+        week_day_names:week_day_names,
+        job_name:job_name,
+        project_id:project_id,
+        is_reoccurring:is_reoccurring
+    :param data:
+    :return:
+    """
+
+
+@socket_io.on('remove_job', namespace="/schedule_job")
+def remove_job(data):
+    print("remove job entered")
+    log_writer = None
+    execution_id = str(uuid.uuid4())
+    try:
+        if 'email_address' in session:
+            executed_by = session['email_address']
+            log_writer = LogRequest(executed_by=executed_by, execution_id=execution_id)
+            log_writer.log_start(dict(data))
+            job_id = data['job_id']
+            sch.remove_job_by_id(job_id=job_id)
+            log_writer.log_stop({'status': True, })
+            emit("remove_job_response", {'message': "Job removed successfully"}, namespace="/schedule_job")
+        else:
+            raise Exception("Please first login to you account")
+    except Exception as e:
+        if log_writer is not None:
+            log_writer.log_stop({'status': False, 'error_message': str(e)})
+            log_exception = LogExceptionDetail(log_writer.executed_by, log_writer.execution_id)
+            log_exception.log(str(e))
+        emit("remove_job_response", {'message': str(e)}, namespace="/schedule_job")

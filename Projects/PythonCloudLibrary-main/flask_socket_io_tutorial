@@ -1,0 +1,60 @@
+1> install flask_socketio
+
+{
+Flask-SocketIO==4.3.1
+python-engineio==3.13.2
+python-socketio==4.6.0
+}
+
+2>import below line in your app.py file
+from flask_socketio import SocketIO, emit
+
+3>socket_io = SocketIO(app)
+
+4>socket_io.run(app)
+
+---server
+@socket_io.on('connect', namespace='/training_model')
+def connecting_to_train_model():
+    print("train model connection is working..")
+
+
+@socket_io.on('begin_training_process', namespace="/training_model")
+def start_training_of_model(data):
+    emit("started_training"+str(project_id), {'message': str(e)}, namespace="/training_model")
+
+
+   ---html page
+      $(document).ready(function(){
+    var namespace="training_model";
+     var project_id=$("#project_id").val();
+    var host_url=$("#host_url").val();
+    var training_socket=io.connect(host_url+namespace);
+
+
+$("#train_model_using_socket").click(function(){
+
+
+    //alert("train model button clicked");
+
+    training_socket.emit('begin_training_process',{project_id:project_id});
+
+    });
+   training_socket.on('started_training'+project_id,function(msg){
+   $("#log-message").append(msg["message"]+"<br>");
+    });
+
+
+5>add script into you html file head
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+git push https://github.com/Avnish327030/PythonCloudLibrary.git
+
+from flask import stream_with_context, request, Response
+
+@app.route('/stream')
+def streamed_response():
+    def generate():
+        yield 'Hello '
+        yield request.args['name']
+        yield '!'
+    return Response(stream_with_context(generate()))
