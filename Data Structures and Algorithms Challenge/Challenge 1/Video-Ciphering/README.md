@@ -8,10 +8,9 @@
 
 ### How to use it :
 - User needs to install tkinter, PIL, cv2, numpy, os, random, moviepy
-- Ensure that the local environment does not have both Pillow and PIL as it will not work. If that is the case first remove PIL using:
-	- pip uninstall PIL
-	Afterwards, install the Pillow library using:
-	- pip install Pillow
+- Ensure that the local environment does not have both Pillow and PIL as it will not work.
+	- If that is the case first remove PIL using: pip uninstall PIL
+	- Afterwards, install the Pillow library using: pip install Pillow
 	
 - User need to download the code, and run the Video_Ciphering.py, on local system.
 - After running a GUI window appears, where user can start the video ciphering application by clicking on the START button.
