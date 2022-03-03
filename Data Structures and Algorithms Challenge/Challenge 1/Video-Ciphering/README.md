@@ -6,16 +6,16 @@
 ***
 
 ### Requirements:
-python 3
-tkinter module
-filedialog from tkinter
-messagebox
-from PIL import Image, ImageTk
-cv2
-numpy
-os
-random
-moviepy
+- python 3
+- tkinter module
+- filedialog from tkinter
+- messagebox
+- from PIL import Image, ImageTk
+- cv2
+- numpy
+- os
+- random
+- moviepy
 
 ****
 
