@@ -3,6 +3,19 @@
 -  In this application user can select any video (either mpy, mp4, avi, or any other extension of video) and will be able to encrypt, decrypt and reset the encrypted video to original format.
 -  Along with encryption, decryption, user will also be able to see the preview of encrypted, decrypted and original video.
 
+***
+
+### Requirements:
+python 3
+tkinter module
+filedialog from tkinter
+messagebox
+from PIL import Image, ImageTk
+cv2
+numpy
+os
+random
+moviepy
 
 ****
 
