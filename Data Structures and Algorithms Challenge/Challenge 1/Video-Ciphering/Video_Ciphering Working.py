@@ -43,3 +43,17 @@ startb = Button(window, text="START",command=start_fun,font=("Arial", 25), bg = 
 startb.place(x = 150, y = 600 )
 
 
+# Adding an image on the main window
+
+path = "Images/front.jpg"
+
+
+# Creates a Tkinter-compatible photo image from Images folder in local
+
+img1 = ImageTk.PhotoImage(Image.open(path))
+
+
+# Label widget to display an image on the screen
+
+panel = tk.Label(window, image = img1)
+panel.place(x = 130, y = 230)
