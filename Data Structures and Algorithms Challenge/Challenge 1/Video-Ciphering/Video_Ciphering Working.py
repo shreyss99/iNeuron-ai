@@ -57,3 +57,17 @@ img1 = ImageTk.PhotoImage(Image.open(path))
 
 panel = tk.Label(window, image = img1)
 panel.place(x = 130, y = 230)
+
+
+# Defining the exit function
+# When the user clicks on the exit button, it will ask the user if he/she wants to exit the application
+
+def exitFunction():
+    if mbox.askokcancel("Exit", "Do you want to exit?"):
+        window.destroy()
+
+
+# EXIT button created and assigned the functionality
+
+exitb = Button(window, text="EXIT",command=exit_win,font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
+exitb.place(x = 730 , y = 580)
