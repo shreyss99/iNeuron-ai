@@ -1,0 +1,9 @@
+tkinter
+from tkinter.fledialog
+import tkinter.messagebox
+from PIL import ImageTk, Image
+cv2
+numpy==1.18.1
+random
+os
+moviepy
