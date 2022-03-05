@@ -65,26 +65,3 @@ panel.place(x = 130, y = 230)
 def exitFunction():
     if mbox.askokcancel("Exit", "Do you want to exit?"):
         window.destroy()
-
-
-# EXIT button created
-
-exitb = Button(window, text="EXIT",command=exit_win,font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
-exitb.place(x = 730 , y = 580)
-
-
-# Call EXIT function when the button is pressed
-
-window.protocol("WM_DELETE_WINDOW", exit_win)
-window.mainloop()
-
-
-# Function to allow user select file
-
-def openFile():
-    global filename
-    filename = filedialog.askopenfilename(title="Select file")
-    path_text.delete("1.0", "end")
-    path_text.insert(END, filename)
-    
-    
