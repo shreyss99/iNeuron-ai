@@ -67,7 +67,15 @@ def exitFunction():
         window.destroy()
 
 
-# EXIT button created and assigned the functionality
+# EXIT button created
 
 exitb = Button(window, text="EXIT",command=exit_win,font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
 exitb.place(x = 730 , y = 580)
+
+
+# Call EXIT function when the button is pressed
+
+window.protocol("WM_DELETE_WINDOW", exit_win)
+window.mainloop()
+
+
