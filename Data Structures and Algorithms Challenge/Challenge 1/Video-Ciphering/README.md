@@ -36,6 +36,3 @@
 - The EXIT button allows which user to exit from the application.
 
 ***
-
-### Name : 
-- Shrey Shah
