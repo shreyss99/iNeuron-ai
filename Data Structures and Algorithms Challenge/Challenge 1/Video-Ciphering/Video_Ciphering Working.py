@@ -79,3 +79,12 @@ window.protocol("WM_DELETE_WINDOW", exit_win)
 window.mainloop()
 
 
+# Function to allow user select file
+
+def openFile():
+    global filename
+    filename = filedialog.askopenfilename(title="Select file")
+    path_text.delete("1.0", "end")
+    path_text.insert(END, filename)
+    
+    
