@@ -86,5 +86,15 @@ window1.title("Video Ciphering") # title for the window frame
 window1.geometry('1000x700') # window size
 
 
+# Function to allow user to select input file
+
+def open_file():
+    global filename
+    filename = filedialog.askopenfilename(title="Select file")
+    path_text.delete("1.0", "end") 
+    path_text.insert(END, filename)
+
+
+
 
 
