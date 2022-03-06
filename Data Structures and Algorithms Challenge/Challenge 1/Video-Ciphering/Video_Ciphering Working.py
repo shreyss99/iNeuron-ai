@@ -39,7 +39,7 @@ def startFunction():
 
 # START button created and assigned the functionality
 
-startb = Button(window, text="START",command=start_fun,font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
+startb = Button(window, text="START", command=startFunction, font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
 startb.place(x = 150, y = 600 )
 
 
@@ -65,3 +65,6 @@ panel.place(x = 130, y = 230)
 def exitFunction():
     if mbox.askokcancel("Exit", "Do you want to exit?"):
         window.destroy()
+        
+        
+
