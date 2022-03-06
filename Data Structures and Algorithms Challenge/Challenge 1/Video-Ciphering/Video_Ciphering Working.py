@@ -91,7 +91,7 @@ window1.geometry('1000x700') # window size
 def open_file():
     global filename
     filename = filedialog.askopenfilename(title="Select file")
-    path_text.delete("1.0", "end") # Remove the box for choosing file once file is selected
+    path_text.delete("1.0", tk.END) # Remove the box for choosing file once file is selected
     path_text.insert(END, filename) # Add the filename
 
 
