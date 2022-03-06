@@ -40,7 +40,7 @@ def startFunction():
 # START button created and assigned the functionality
 
 startb = Button(window, text="START", command=startFunction, font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
-startb.place(x = 150, y = 600 )
+startb.place(x = 150, y = 600)
 
 
 # Adding an image on the main window
@@ -69,5 +69,5 @@ def exitFunction():
         
 # EXIT button created and assigned the functionality
 
-exitb = Button(window, text="EXIT",command=exit_win,font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
-exitb.place(x =730 , y = 580 )
+exitb = Button(window, text="EXIT", command=exitFunction, font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
+exitb.place(x = 730 , y = 580)
