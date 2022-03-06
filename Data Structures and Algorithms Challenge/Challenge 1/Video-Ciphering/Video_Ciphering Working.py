@@ -71,3 +71,10 @@ def exitFunction():
 
 exitb = Button(window, text="EXIT", command=exitFunction, font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
 exitb.place(x = 730 , y = 580)
+
+
+# Call exit function when the button is pressed
+
+window.protocol("WM_DELETE_WINDOW", exitFunction)
+window.mainloop()
+
