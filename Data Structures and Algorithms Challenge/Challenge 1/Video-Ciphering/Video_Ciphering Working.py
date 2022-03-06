@@ -78,3 +78,13 @@ exitb.place(x = 730 , y = 580)
 window.protocol("WM_DELETE_WINDOW", exitFunction)
 window.mainloop()
 
+
+# Main Window & Configuration once START Button is presses
+
+window1 = tk.Tk() # created a tkinter gui window frame
+window1.title("Video Ciphering") # title for the window frame
+window1.geometry('1000x700') # window size
+
+
+
+
