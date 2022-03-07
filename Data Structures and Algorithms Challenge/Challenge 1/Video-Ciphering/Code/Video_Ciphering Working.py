@@ -148,6 +148,18 @@ def encrypt_fun():
                 
                 # Convert the image into an array of floats and divide value by 255 to standardise
                 image_input = image_input.astype(float) / 255.0
+                
+                mu, sigma = 0, 0.04  # mean and standard deviation
+                
+                # Generate a key by using randomly initialised array and adding epsilon limits for nore randomisation
+                encryptionKey = np.random.normal(mu, sigma, (x3, y)) + np.finfo(float).eps
+        
+                # Get encrypted image and storing it
+                image_encrypted = image_input / encryptionKey
+                name1 = './Sample_Output/frameEncrypted' + str(x1) + '.jpg'
+                cv2.imwrite(name1, image_encrypted * 255)
+                
+                # ----------------------------------------------------------
              
 
                 
