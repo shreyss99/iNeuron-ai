@@ -137,6 +137,21 @@ def encrypt_fun():
                 cv2.imwrite(name, frame)
 
 
+                # Convert to encrypted image
+                #-------------------------------------------------------
+                
+                # Change image to grayscale
+                image_input = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
+                
+                # Calculate image frame shape
+                (image_rows, image_cols) = image_input.shape
+                
+                # Convert the image into an array of floats and divide value by 255 to standardise
+                image_input = image_input.astype(float) / 255.0
+             
+
+                
+
 
 
 
