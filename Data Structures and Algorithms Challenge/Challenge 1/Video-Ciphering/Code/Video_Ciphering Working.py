@@ -106,6 +106,14 @@ def encrypt_fun():
     cam = cv2.VideoCapture(filename)
     # Fetch the frames per second of the video
     fps = int(cam.get(cv2.CAP_PROP_FPS))
+    
+try:
+    # Try creating a folder named 'Sample_Output' else raise Exception
+    if not os.path.exists('Sample_Output'):
+        os.makedirs('Sample_Output')
+
+    except OSError:
+        print('Error: Creating directory of data')
 
 
 
