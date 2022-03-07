@@ -1,0 +1,9 @@
+VIDEO CIPHERING ALGORITHM:
+
+1) In this assignment, we have taken an approach for developing an easy-to-understand algorithm for Video Ciphering.
+
+2) Firstly, after the user inputs the video filename, we capture the details of the video and its frames per second using OpenCV function.
+
+3) If the video is correctly read, we obtain its frame and store it - using loops, we keep on breaking the video into images until the video does not end and store these frames for encryption.
+
+
