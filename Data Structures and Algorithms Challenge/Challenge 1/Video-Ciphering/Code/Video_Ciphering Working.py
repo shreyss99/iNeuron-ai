@@ -177,6 +177,32 @@ def encrypt_fun():
     video = concatenate(ic_list, method="compose")
     video.write_videofile('Output_Video.mp4', fps=fps)
     
+    
+    # Play encrypted video ------------
+    
+    cap = cv2.VideoCapture('Output_Video.mp4')
+    
+    if (cap.isOpened()== False): 
+        print("Error opening video stream or file")
+
+    # Read until video is completed
+    while(cap.isOpened()):
+    # Capture frame-by-frame
+        ret, frame = cap.read()
+        if ret == True:
+
+        # Display the resulting frame
+            cv2.imshow('Encrypted Video', frame)
+
+        # Press Q on keyboard to exit
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        else:
+            break
+            
+    cap.release()
+    cv2.destroyAllWindows()
+    
              
 
                 
