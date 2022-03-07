@@ -166,6 +166,16 @@ def encrypt_fun():
             break
  
 
+    cam.release()
+    cv2.destroyAllWindows()
+    
+    # Capture encrypted video
+    
+    ic_list = []
+    for i in range(x2):
+        ic_list.append(ImageClip("Images/sample.jpg").set_duration(1))
+    video = concatenate(ic_list, method="compose")
+    video.write_videofile('Output_Video.mp4', fps=fps)
     
              
 
