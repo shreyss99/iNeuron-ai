@@ -6,4 +6,10 @@ VIDEO CIPHERING ALGORITHM:
 
 3) If the video is correctly read, we obtain its frame and store it - using loops, we keep on breaking the video into images until the video does not end and store these frames for encryption.
 
+4) The stores images are still colored and then we convert them to grayscale images.
+
+5) We then convert the image to a 2-D ARRAY of float32 values and divide the pixel intensity by 255.0 to keep it between 0 and 1.
+
+6) Calculate the dimensions of this image in terms of array rows and columns - width and height.
+
 
