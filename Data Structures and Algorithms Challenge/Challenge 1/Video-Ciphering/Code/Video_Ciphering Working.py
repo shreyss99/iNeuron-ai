@@ -160,6 +160,13 @@ def encrypt_fun():
                 cv2.imwrite(name1, image_encrypted * 255)
                 
                 # ----------------------------------------------------------
+            
+             currentframe += 1
+        else:
+            break
+ 
+
+    
              
 
                 
