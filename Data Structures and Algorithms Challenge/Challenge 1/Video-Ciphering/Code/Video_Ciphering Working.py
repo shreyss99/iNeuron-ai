@@ -95,6 +95,17 @@ def open_file():
     path_text.insert(END, filename) # Add the filename
 
 
+# Function to encrypt video and show encrypted video
+def encrypt_fun():
+    global filename
+    path_list = []
+
+    # converting videos to images
+    # ---------------------------------------------
+    # Read the video from specified path
+    cam = cv2.VideoCapture(filename)
+    # Fetch the frames per second of the video
+    fps = int(cam.get(cv2.CAP_PROP_FPS))
 
 
 
