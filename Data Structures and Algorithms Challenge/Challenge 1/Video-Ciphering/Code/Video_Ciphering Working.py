@@ -107,13 +107,35 @@ def encrypt_fun():
     # Fetch the frames per second of the video
     fps = int(cam.get(cv2.CAP_PROP_FPS))
     
-try:
-    # Try creating a folder named 'Sample_Output' else raise Exception
-    if not os.path.exists('Sample_Output'):
-        os.makedirs('Sample_Output')
+    try:
+        # Try creating a folder named 'Sample_Output' else raise Exception
+        if not os.path.exists('Sample_Output'):
+            os.makedirs('Sample_Output')
 
-    except OSError:
-        print('Error: Creating directory of data')
+        except OSError:
+            print('Error: Creating directory of data')
+        
+    # Set variables    
+    currentframe = 0
+    x2 = 0
+    
+    while (True):
+    
+        # Read from frame by accessing webcam
+        ret, frame = cam.read() # ret stores boolean if frame is read correctly and frame stores the frame
+        
+        if ret:
+            if currentframe % fps == 0:
+            
+                # If video is still left continue creating images
+                x1 = currentframe // fps
+                name = './Sample_Output/frame' + str(x1) + '.jpg'
+
+                x2 += 1
+
+                # Write the extracted images
+                cv2.imwrite(name, frame)
+
 
 
 
