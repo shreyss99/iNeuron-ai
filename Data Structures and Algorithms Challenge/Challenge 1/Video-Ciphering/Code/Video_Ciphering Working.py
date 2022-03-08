@@ -157,7 +157,7 @@ def encrypt_fun():
         
                 # Get encrypted image and storing it
                 image_encrypted = image_input / encryptionKey
-                name1 = './Sample_Output/frameEncrypted' + str(x1) + '.jpg'
+                name1 = './Sample_Output/encrypted' + str(x1) + '.jpg'
                 cv2.imwrite(name1, image_encrypted * 255)
                 
                 # ----------------------------------------------------------
