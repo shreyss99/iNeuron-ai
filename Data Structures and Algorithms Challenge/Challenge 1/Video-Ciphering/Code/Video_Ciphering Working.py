@@ -219,9 +219,12 @@ def decrypt_fun():
     # Capture frame-by-frame
         ret, frame = cap.read()
         if ret == True:
+        
+            # Converting to grayscale
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
             # Display the resulting frame
-            cv2.imshow('Decryptedted Video', frame)
+            cv2.imshow('Decryptedted Video', gray)
 
             # Press Q on keyboard to exit
             if cv2.waitKey(1) & 0xFF == ord('q'):
