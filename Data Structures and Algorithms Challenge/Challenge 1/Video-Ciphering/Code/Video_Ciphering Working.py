@@ -119,6 +119,7 @@ def encrypt_fun():
     currentframe = 0
     x2 = 0
     
+
     while (True):
     
         # Read from frame by accessing webcam
@@ -204,7 +205,33 @@ def encrypt_fun():
     cv2.destroyAllWindows()
     
     
-             
+# Function to decrypt video and show decrypted video
+
+def decrypt_fun():
+
+    global filename
+    cap = cv2.VideoCapture(filename)
+    
+    if (cap.isOpened()== False): 
+        print("Error opening video stream or file")
+    
+    while(cap.isOpened()):
+    # Capture frame-by-frame
+        ret, frame = cap.read()
+        if ret == True:
+
+        # Display the resulting frame
+            cv2.imshow('Decryptedted Video', frame)
+
+        # Press Q on keyboard to exit
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        else:
+            break
+            
+    cap.release()
+    cv2.destroyAllWindows()
+                 
 
                 
 
