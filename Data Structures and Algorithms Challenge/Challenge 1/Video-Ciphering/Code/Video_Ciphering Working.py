@@ -277,4 +277,23 @@ lbl2.place(x=80, y=220)
 
 path_text = tk.Text(window1, height=3, width=37, font=("Arial", 30), bg="light yellow", fg="orange",borderwidth=2, relief="solid")
 path_text.place(x=80, y = 270)
+
+
+# Select Button with Encryption function
+
+selectb=Button(window1, text="ENCRYPT VIDEO",command=encrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb.place(x = 120, y = 450)
+
+
+# Select Button with Decryption function
+
+selectb=Button(window1, text="DECRYPT VIDEO",command=decrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb.place(x = 550, y = 450)
+
+
+# Select Button to Open File
+
+selectb=Button(window1, text="SELECT",command=open_file,  font=("Arial", 25), bg = "light green", fg = "blue")
+selectb.place(x = 80, y = 580)
+
                  
