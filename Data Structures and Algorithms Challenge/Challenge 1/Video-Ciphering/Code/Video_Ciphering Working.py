@@ -152,7 +152,7 @@ def encrypt_fun():
                 mu, sigma = 0, 0.04  # mean and standard deviation
                 
                 # Generate a key by using randomly initialised array and adding epsilon limits for nore randomisation
-                encryptionKey = np.random.normal(mu, sigma, (x3, y)) + np.finfo(float).eps
+                encryptionKey = np.random.normal(mu, sigma, (image_rows, image_cols)) + np.finfo(float).eps
         
                 # Get encrypted image and storing it
                 image_encrypted = image_input / encryptionKey
@@ -202,6 +202,7 @@ def encrypt_fun():
             
     cap.release()
     cv2.destroyAllWindows()
+    
     
              
 
