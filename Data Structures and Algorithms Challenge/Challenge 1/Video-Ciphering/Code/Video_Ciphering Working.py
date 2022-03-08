@@ -188,7 +188,8 @@ def encrypt_fun():
 
     # Read until video is completed
     while(cap.isOpened()):
-    # Capture frame-by-frame
+    
+        # Capture frame-by-frame
         ret, frame = cap.read()
         if ret == True:
 
@@ -216,7 +217,8 @@ def decrypt_fun():
         print("Error opening video stream or file")
     
     while(cap.isOpened()):
-    # Capture frame-by-frame
+    
+        # Capture frame-by-frame
         ret, frame = cap.read()
         if ret == True:
         
@@ -224,7 +226,7 @@ def decrypt_fun():
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
             # Display the resulting frame
-            cv2.imshow('Decryptedted Video', gray)
+            cv2.imshow('Decrypted Video', gray)
 
             # Press Q on keyboard to exit
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -236,11 +238,29 @@ def decrypt_fun():
     cv2.destroyAllWindows()
     
     
+def reset_fun():
+    global filename
+    cap = cv2.VideoCapture(filename)
+    
+    if (cap.isOpened()== False): 
+        print("Error opening video stream or file")
+    
+    while(cap.isOpened()):
+    
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+        if ret == True:
 
+        # Display the resulting frame
+            cv2.imshow('Original Video', frame)
+
+        # Press Q on keyboard to exit
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        else:
+            break
+            
+    cap.release()
+    cv2.destroyAllWindows()
+    
                  
-
-                
-
-
-
-
