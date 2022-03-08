@@ -12,4 +12,10 @@ VIDEO CIPHERING ALGORITHM:
 
 6) Calculate the dimensions of this image in terms of array rows and columns - width and height.
 
+7) We initialise mean and standard deviation variables to 0.0 and 0.4 - After multiple trials we have chosen the standard deviation value to 0.4 for encryption to hide th image contents, yet give a slight idea what it may represent.
+
+8) We use 2-D ARRAYS to perform arithmetic calculation and generate the encryption key.
+
+9) The size of the 2-D ARRAY is same as the size of the image.
+
 
