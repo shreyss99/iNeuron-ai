@@ -308,5 +308,14 @@ getb.place(x = 420, y = 580)
 def exit_win1():
     if mbox.askokcancel("Exit", "Do you want to exit?"):
         window1.destroy()
+        
+
+# Exit Button
+
+getb=Button(window1, text="EXIT",command=exit_win1,  font=("Arial", 25), bg = "red", fg = "blue")
+getb.place(x = 780, y = 580)
+
+window1.protocol("WM_DELETE_WINDOW", exit_win1)
+window1.mainloop()
 
                  
