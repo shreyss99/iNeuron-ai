@@ -263,4 +263,18 @@ def reset_fun():
     cap.release()
     cv2.destroyAllWindows()
     
+    
+
+# Top label configuratio
+
+start1 = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55, "underline"), fg="black") # same way bg
+start1.place(x = 120, y = 10)
+
+lbl2 = tk.Label(text="Selected Video", font=("Arial", 30),fg="brown")  # same way bg
+lbl2.place(x=80, y=220)
+
+# Selection box
+
+path_text = tk.Text(window1, height=3, width=37, font=("Arial", 30), bg="light yellow", fg="orange",borderwidth=2, relief="solid")
+path_text.place(x=80, y = 270)
                  
