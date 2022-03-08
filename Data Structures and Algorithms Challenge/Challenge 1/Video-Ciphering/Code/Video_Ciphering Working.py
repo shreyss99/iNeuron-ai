@@ -296,4 +296,17 @@ selectb.place(x = 550, y = 450)
 selectb=Button(window1, text="SELECT",command=open_file,  font=("Arial", 25), bg = "light green", fg = "blue")
 selectb.place(x = 80, y = 580)
 
+
+# Select Button with Reset function
+
+getb=Button(window1, text="RESET",command=reset_fun,  font=("Arial", 25), bg = "yellow", fg = "blue")
+getb.place(x = 420, y = 580)
+
+
+# Option for exit of window
+
+def exit_win1():
+    if mbox.askokcancel("Exit", "Do you want to exit?"):
+        window1.destroy()
+
                  
