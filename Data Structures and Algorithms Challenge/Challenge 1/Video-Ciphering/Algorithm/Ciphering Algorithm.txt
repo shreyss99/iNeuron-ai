@@ -18,4 +18,8 @@ VIDEO CIPHERING ALGORITHM:
 
 9) The size of the 2-D ARRAY is same as the size of the image.
 
+10) This 2-D ARRAY containins values between mean and standard deviation which are generated randomly.
+
+11) Next, we obtain the encryption key using the randomly initialised 2-D ARRAY and add the epsilon limits to the random vales to add more noise into each pixel value.
+
 
