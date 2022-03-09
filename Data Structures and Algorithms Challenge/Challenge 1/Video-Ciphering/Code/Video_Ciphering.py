@@ -45,7 +45,7 @@ startButton.place(x = 150, y = 600)
 
 # Adding an image on the main window
 
-path = "Images/front.jpg"
+path = "./Images/front.jpg"
 
 
 # Creates a Tkinter-compatible photo image from Images folder in local
@@ -112,8 +112,8 @@ def encryptFunction():
         if not os.path.exists('Sample_Output'):
             os.makedirs('Sample_Output')
 
-        except OSError:
-            print('Error: Creating directory of data')
+    except OSError:
+        print('Error: Creating directory of data')
         
     # Set variables    
     currentframe = 0
@@ -161,7 +161,8 @@ def encryptFunction():
                 
                 # ----------------------------------------------------------
             
-             currentframe += 1
+            currentframe += 1
+            
         else:
             break
  
@@ -173,13 +174,13 @@ def encryptFunction():
     
     ic_list = []
     for i in range(count):
-        ic_list.append(ImageClip("Images/sample.jpg").set_duration(1))
+        ic_list.append(ImageClip("./Images/sample.jpg").set_duration(1))
     video = concatenate(ic_list, method="compose")
-    video.write_videofile('Output_Video.mp4', fps=fps)  
+    video.write_videofile('./Sample_Output/Output_Video.mp4', fps=fps)  
     
     # Play encrypted video ------------
     
-    cap = cv2.VideoCapture('Output_Video.mp4')
+    cap = cv2.VideoCapture('./Sample_Output/Output_Video.mp4')
     
     if (cap.isOpened()== False): 
         print("Error opening video stream or file")
