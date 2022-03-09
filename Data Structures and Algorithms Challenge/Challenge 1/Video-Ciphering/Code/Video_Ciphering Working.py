@@ -26,7 +26,7 @@ window.geometry('1000x700') # window size
 
 # Top label
 
-startFirst = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55,"underline"), fg="black")
+startFirst = tk.Label(text = "VIDEO  CIPHERING", font = ("Arial", 55,"underline"), fg = "black")
 startFirst.place(x = 120, y = 10)
 
 
@@ -39,7 +39,7 @@ def startFunction():
 
 # START button created and assigned the functionality
 
-startButton = Button(window, text="START", command=startFunction, font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
+startButton = Button(window, text = "START", command = startFunction, font = ("Arial", 25), bg = "green", fg = "black", borderwidth = 3, relief = "raised")
 startButton.place(x = 150, y = 600)
 
 
@@ -50,12 +50,12 @@ path = "Images/front.jpg"
 
 # Creates a Tkinter-compatible photo image from Images folder in local
 
-img1 = ImageTk.PhotoImage(Image.open(path))
+imageBackground = ImageTk.PhotoImage(Image.open(path))
 
 
 # Label widget to display an image on the screen
 
-panel = tk.Label(window, image = img1)
+panel = tk.Label(window, image = imageBackground)
 panel.place(x = 130, y = 230)
 
 
@@ -69,7 +69,7 @@ def exitFunction():
         
 # EXIT button created and assigned the functionality
 
-exitb = Button(window, text="EXIT", command=exitFunction, font=("Arial", 25), bg = "red", fg = "white", borderwidth=3, relief="raised")
+exitb = Button(window, text = "EXIT", command = exitFunction, font = ("Arial", 25), bg = "red", fg = "white", borderwidth = 3, relief = "raised")
 exitb.place(x = 730 , y = 580)
 
 
@@ -117,7 +117,7 @@ def encryptFunction():
         
     # Set variables    
     currentframe = 0
-    x2 = 0
+    count = 0
     
     while (True):
     
@@ -128,10 +128,10 @@ def encryptFunction():
             if currentframe % fps == 0:
             
                 # If video is still left continue creating images
-                x1 = currentframe // fps
-                name = './Sample_Output/frame' + str(x1) + '.jpg'
+                suffix = currentframe // fps
+                name = './Sample_Output/frame' + str(suffix) + '.jpg'
 
-                x2 += 1
+                count += 1
 
                 # Write the extracted images
                 cv2.imwrite(name, frame)
@@ -140,7 +140,7 @@ def encryptFunction():
                 # Convert to encrypted image
                 #-------------------------------------------------------
                 
-                # Change image to grayscale
+                # Change image to gray scale
                 image_input = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
                 
                 # Calculate image frame shape
@@ -156,8 +156,8 @@ def encryptFunction():
         
                 # Get encrypted image and storing it
                 image_encrypted = image_input / encryptionKey
-                name1 = './Sample_Output/encrypted' + str(x1) + '.jpg'
-                cv2.imwrite(name1, image_encrypted * 255)
+                nameEncrypted = './Sample_Output/encrypted' + str(suffix) + '.jpg'
+                cv2.imwrite(nameEncrypted, image_encrypted * 255)
                 
                 # ----------------------------------------------------------
             
@@ -172,11 +172,10 @@ def encryptFunction():
     # Capture encrypted video
     
     ic_list = []
-    for i in range(x2):
+    for i in range(count):
         ic_list.append(ImageClip("Images/sample.jpg").set_duration(1))
     video = concatenate(ic_list, method="compose")
-    video.write_videofile('Output_Video.mp4', fps=fps)
-    
+    video.write_videofile('Output_Video.mp4', fps=fps)  
     
     # Play encrypted video ------------
     
@@ -221,11 +220,11 @@ def decryptFunction():
         ret, frame = cap.read()
         if ret == True:
         
-            # Converting to grayscale
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            # Converting to gray scale
+            grayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
             # Display the resulting frame
-            cv2.imshow('Decrypted Video', gray)
+            cv2.imshow('Decrypted Video', grayImage)
 
             # Press Q on keyboard to exit
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -266,55 +265,54 @@ def resetFunction():
 
 # Top label configuratio
 
-startFirst = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55, "underline"), fg="black") # same way bg
+startFirst = tk.Label(text = "VIDEO  CIPHERING", font = ("Arial", 55, "underline"), fg = "black")
 startFirst.place(x = 120, y = 10)
 
-lbl2 = tk.Label(text="Selected Video", font=("Arial", 30),fg="brown")  # same way bg
-lbl2.place(x=80, y=220)
+lbl2 = tk.Label(text="Selected Video", font=("Arial", 30),fg="brown")
+lbl2.place(x = 80, y = 220)
 
 # Selection box
 
-path_text = tk.Text(windowNew, height=3, width=37, font=("Arial", 30), bg="light yellow", fg="orange",borderwidth=2, relief="solid")
-path_text.place(x=80, y = 270)
+path_text = tk.Text(windowNew, height = 3, width = 37, font = ("Arial", 30), bg = "light yellow", fg = "orange", borderwidth = 2, relief = "solid")
+path_text.place(x = 80, y = 270)
 
 
 # Select Button with Encryption function
 
-selectb=Button(windowNew, text="ENCRYPT VIDEO",command=encryptFunction,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text = "ENCRYPT VIDEO", command = encryptFunction, font = ("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 120, y = 450)
 
 
 # Select Button with Decryption function
 
-selectb=Button(windowNew, text="DECRYPT VIDEO",command=decryptFunction,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text = "DECRYPT VIDEO", command = decryptFunction, font = ("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 550, y = 450)
 
 
 # Select Button to Open File
 
-selectb=Button(windowNew, text="SELECT",command=openFile,  font=("Arial", 25), bg = "light green", fg = "blue")
+selectb=Button(windowNew, text = "SELECT", command = openFile, font = ("Arial", 25), bg = "light green", fg = "blue")
 selectb.place(x = 80, y = 580)
 
 
 # Select Button with Reset function
 
-getb=Button(windowNew, text="RESET",command=resetFunction,  font=("Arial", 25), bg = "yellow", fg = "blue")
+getb=Button(windowNew, text = "RESET", command = resetFunction, font = ("Arial", 25), bg = "yellow", fg = "blue")
 getb.place(x = 420, y = 580)
 
 
 # Option for exit of window
 
-def exit_win1():
+def exitWindowNew():
     if mbox.askokcancel("Exit", "Do you want to exit?"):
         windowNew.destroy()
         
 
 # Exit Button
 
-getb=Button(windowNew, text="EXIT",command=exit_win1,  font=("Arial", 25), bg = "red", fg = "blue")
+getb=Button(windowNew, text = "EXIT", command = exitWindowNew, font = ("Arial", 25), bg = "red", fg = "blue")
 getb.place(x = 780, y = 580)
 
-windowNew.protocol("WM_DELETE_WINDOW", exit_win1)
+windowNew.protocol("WM_DELETE_WINDOW", exitWindowNew)
 windowNew.mainloop()
 
-                 
