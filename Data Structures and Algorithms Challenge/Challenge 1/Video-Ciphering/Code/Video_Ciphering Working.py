@@ -26,8 +26,8 @@ window.geometry('1000x700') # window size
 
 # Top label
 
-start1 = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55,"underline"), fg="black")
-start1.place(x = 120, y = 10)
+startFirst = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55,"underline"), fg="black")
+startFirst.place(x = 120, y = 10)
 
 
 # Defining the start function
@@ -39,8 +39,8 @@ def startFunction():
 
 # START button created and assigned the functionality
 
-startb = Button(window, text="START", command=startFunction, font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
-startb.place(x = 150, y = 600)
+startButton = Button(window, text="START", command=startFunction, font=("Arial", 25), bg = "green", fg = "black", borderwidth=3, relief="raised")
+startButton.place(x = 150, y = 600)
 
 
 # Adding an image on the main window
@@ -81,9 +81,9 @@ window.mainloop()
 
 # Main Window & Configuration once START Button is presses
 
-window1 = tk.Tk() # created a tkinter gui window frame
-window1.title("Video Ciphering") # title for the window frame
-window1.geometry('1000x700') # window size
+windowNew = tk.Tk() # created a tkinter gui window frame
+windowNew.title("Video Ciphering") # title for the window frame
+windowNew.geometry('1000x700') # window size
 
 
 # Function to allow user to select input file
@@ -267,39 +267,39 @@ def reset_fun():
 
 # Top label configuratio
 
-start1 = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55, "underline"), fg="black") # same way bg
-start1.place(x = 120, y = 10)
+startFirst = tk.Label(text = "VIDEO  CIPHERING", font=("Arial", 55, "underline"), fg="black") # same way bg
+startFirst.place(x = 120, y = 10)
 
 lbl2 = tk.Label(text="Selected Video", font=("Arial", 30),fg="brown")  # same way bg
 lbl2.place(x=80, y=220)
 
 # Selection box
 
-path_text = tk.Text(window1, height=3, width=37, font=("Arial", 30), bg="light yellow", fg="orange",borderwidth=2, relief="solid")
+path_text = tk.Text(windowNew, height=3, width=37, font=("Arial", 30), bg="light yellow", fg="orange",borderwidth=2, relief="solid")
 path_text.place(x=80, y = 270)
 
 
 # Select Button with Encryption function
 
-selectb=Button(window1, text="ENCRYPT VIDEO",command=encrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text="ENCRYPT VIDEO",command=encrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 120, y = 450)
 
 
 # Select Button with Decryption function
 
-selectb=Button(window1, text="DECRYPT VIDEO",command=decrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text="DECRYPT VIDEO",command=decrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 550, y = 450)
 
 
 # Select Button to Open File
 
-selectb=Button(window1, text="SELECT",command=open_file,  font=("Arial", 25), bg = "light green", fg = "blue")
+selectb=Button(windowNew, text="SELECT",command=open_file,  font=("Arial", 25), bg = "light green", fg = "blue")
 selectb.place(x = 80, y = 580)
 
 
 # Select Button with Reset function
 
-getb=Button(window1, text="RESET",command=reset_fun,  font=("Arial", 25), bg = "yellow", fg = "blue")
+getb=Button(windowNew, text="RESET",command=reset_fun,  font=("Arial", 25), bg = "yellow", fg = "blue")
 getb.place(x = 420, y = 580)
 
 
@@ -307,15 +307,15 @@ getb.place(x = 420, y = 580)
 
 def exit_win1():
     if mbox.askokcancel("Exit", "Do you want to exit?"):
-        window1.destroy()
+        windowNew.destroy()
         
 
 # Exit Button
 
-getb=Button(window1, text="EXIT",command=exit_win1,  font=("Arial", 25), bg = "red", fg = "blue")
+getb=Button(windowNew, text="EXIT",command=exit_win1,  font=("Arial", 25), bg = "red", fg = "blue")
 getb.place(x = 780, y = 580)
 
-window1.protocol("WM_DELETE_WINDOW", exit_win1)
-window1.mainloop()
+windowNew.protocol("WM_DELETE_WINDOW", exit_win1)
+windowNew.mainloop()
 
                  
