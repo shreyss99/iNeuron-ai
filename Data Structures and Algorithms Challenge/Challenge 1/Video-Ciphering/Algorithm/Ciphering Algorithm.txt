@@ -22,4 +22,12 @@ VIDEO CIPHERING ALGORITHM:
 
 11) Next, we obtain the encryption key using the randomly initialised 2-D ARRAY and add the epsilon limits to the random vales to add more noise into each pixel value.
 
+12) We then obtain the new pixel values of the image by performing division between the original pixel intenisty and the corresponding value in the generated encryption key.
+
+13) This forms the encrypted image and we then multiply back the pixel value with 255 to get the intensity between 0 and 255 store this encrypted image.
+
+14) For decryption, we convert the image file to grayscale and display it.
+
+15) The reset option displays the original video in the colored format.
+
 
