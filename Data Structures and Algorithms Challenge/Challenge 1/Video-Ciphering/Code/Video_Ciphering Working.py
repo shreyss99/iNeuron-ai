@@ -88,7 +88,7 @@ windowNew.geometry('1000x700') # window size
 
 # Function to allow user to select input file
 
-def open_file():
+def openFile():
     global filename
     filename = filedialog.askopenfilename(title="Select file")
     path_text.delete("1.0", tk.END) # Remove the box for choosing file once file is selected
@@ -96,7 +96,7 @@ def open_file():
 
 
 # Function to encrypt video and show encrypted video
-def encrypt_fun():
+def encryptFunction():
     global filename
     path_list = []
 
@@ -119,7 +119,6 @@ def encrypt_fun():
     currentframe = 0
     x2 = 0
     
-
     while (True):
     
         # Read from frame by accessing webcam
@@ -208,7 +207,7 @@ def encrypt_fun():
     
 # Function to decrypt video and show decrypted video
 
-def decrypt_fun():
+def decryptFunction():
 
     global filename
     cap = cv2.VideoCapture(filename)
@@ -238,7 +237,7 @@ def decrypt_fun():
     cv2.destroyAllWindows()
     
     
-def reset_fun():
+def resetFunction():
     global filename
     cap = cv2.VideoCapture(filename)
     
@@ -281,25 +280,25 @@ path_text.place(x=80, y = 270)
 
 # Select Button with Encryption function
 
-selectb=Button(windowNew, text="ENCRYPT VIDEO",command=encrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text="ENCRYPT VIDEO",command=encryptFunction,  font=("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 120, y = 450)
 
 
 # Select Button with Decryption function
 
-selectb=Button(windowNew, text="DECRYPT VIDEO",command=decrypt_fun,  font=("Arial", 25), bg = "orange", fg = "blue")
+selectb=Button(windowNew, text="DECRYPT VIDEO",command=decryptFunction,  font=("Arial", 25), bg = "orange", fg = "blue")
 selectb.place(x = 550, y = 450)
 
 
 # Select Button to Open File
 
-selectb=Button(windowNew, text="SELECT",command=open_file,  font=("Arial", 25), bg = "light green", fg = "blue")
+selectb=Button(windowNew, text="SELECT",command=openFile,  font=("Arial", 25), bg = "light green", fg = "blue")
 selectb.place(x = 80, y = 580)
 
 
 # Select Button with Reset function
 
-getb=Button(windowNew, text="RESET",command=reset_fun,  font=("Arial", 25), bg = "yellow", fg = "blue")
+getb=Button(windowNew, text="RESET",command=resetFunction,  font=("Arial", 25), bg = "yellow", fg = "blue")
 getb.place(x = 420, y = 580)
 
 
