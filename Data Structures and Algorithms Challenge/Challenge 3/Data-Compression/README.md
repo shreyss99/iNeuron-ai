@@ -28,3 +28,14 @@
 ```sh
 $ ./compress.py -h
 usage: compress.py [-h] [--alg {huffman,fano,lzw,image,zip}] input_file output_path
+
+Compress a file
+
+positional arguments:
+  input_file            input file to be compressed
+  output_path           output path for storing compressed output file
+  --alg 				{huffman,fano,lzw,image,zip}            
+
+optional arguments:
+  -h, --help            show this help message and exit
+```
