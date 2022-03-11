@@ -15,11 +15,11 @@
 
 - The project is a Python script which accepts the input file to be compressed, the algorithm to be used for compression and the output path to store the compressed file.
 - These 3 parameters are input to the script as command-line arguments using parseArgs module.
-- Once these are selected, the compressed file is placed at the output path.
+- Once these are selected, the file is compressed using the apecifiec algorithm and the compressed file is placed at the output path.
 - For checking the accuracy, we will be displaying certain file properties:
-  - The size of original uncompressed file
-  - The size of compressed file
-  - The compression ratio for the file based on the algorithm.
+  - The size of uncompressed file (in bytes)
+  - The size of compressed file (in bytes)
+  - The compression ratio = (size of uncompressed file / size of compressed file)
 
 ### Usage:
 
