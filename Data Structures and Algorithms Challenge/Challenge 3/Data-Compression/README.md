@@ -19,7 +19,7 @@
 - For checking the accuracy, we will be displaying certain file properties:
   - The size of uncompressed file (in bytes)
   - The size of compressed file (in bytes)
-  - The compression ratio = \frac{size of uncompressed file}{size of compressed file}
+  - The compression ratio = (size of uncompressed file) / (size of compressed file)
 
 ### Usage:
 
