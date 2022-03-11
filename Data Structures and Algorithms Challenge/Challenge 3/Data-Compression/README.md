@@ -24,3 +24,7 @@
 ### Usage:
 
 - To compress a file and store it in a path, run `compress.py` script. To show help, enter `./compress.py -h` command:
+
+```sh
+$ ./compress.py -h
+usage: compress.py [-h] [--alg {huffman,fano,lzw,image,zip}] input_file output_path
