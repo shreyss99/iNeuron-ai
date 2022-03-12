@@ -39,3 +39,6 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
 ```
+
+When run this script, you must choose one of available algorithms (`huffman`, `fano`, `lzw`, `image`, `zip`), pass an `input file` to be compressed and an `output path` for storing decompressed file.
+Huffman algorithm will be default when run this script. To run with another algorithm, use option `--alg` to specify an algorithm you want. For example:
