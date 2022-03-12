@@ -13,3 +13,9 @@ def compress(input_file, output_path):
     output_filename = input_filename + '.zip'
     output_file = os.path.join(output_path, output_filename)
     
+    # Add compression type to DEFLATED
+    compression_type = zipfile.ZIP_DEFLATED
+    
+    # Create a zipfile with write permission
+    zf = zipfile.ZipFile(output_file, mode="w")
+    
