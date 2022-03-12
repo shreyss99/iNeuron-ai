@@ -19,3 +19,13 @@ def compress(input_file, output_path):
     # Create a zipfile with write permission
     zf = zipfile.ZipFile(output_file, mode="w")
     
+    try:
+        # Compress the input file using zip and store file
+        zip_file = zf.write(input_file, compress_type=compression_type)
+
+    except FileNotFoundError as e:
+        print(f'Exception occurred during zip process - {e}')
+        
+    finally:
+        zf.close()
+    
