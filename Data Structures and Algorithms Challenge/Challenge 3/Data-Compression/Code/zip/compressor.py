@@ -28,4 +28,6 @@ def compress(input_file, output_path):
         
     finally:
         zf.close()
+        
+    return output_file
     
