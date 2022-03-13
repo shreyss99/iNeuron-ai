@@ -23,3 +23,9 @@ def compress(input_file, output_path):
     # Get frequency table from data
     frequencies = collections.Counter(data)
     
+    
+    
+
+
+def build_tree(frequencies):
+    ''' Build Huffman tree and return its root '''
