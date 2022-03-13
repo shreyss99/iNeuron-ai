@@ -29,3 +29,8 @@ def compress(input_file, output_path):
 
 def build_tree(frequencies):
     ''' Build Huffman tree and return its root '''
+    
+    
+
+def create_queue_from_frequencies(frequencies):
+    ''' Create priority queue from frequency table '''
