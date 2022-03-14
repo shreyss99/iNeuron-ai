@@ -23,3 +23,8 @@ def compress(input_file, output_path):
     dic = {chr(c): c for c in range(0, 256)}
     chars = dic.keys()
     max_code = 255
+    
+    index = 0
+    s = data[index]
+    length = len(data)
+    codes = []
