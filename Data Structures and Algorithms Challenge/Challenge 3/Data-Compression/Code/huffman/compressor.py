@@ -27,7 +27,11 @@ def compress(input_file, output_path):
     padded_encoded_str = utility.pad_encoded_str(encoded_str)
     byte_data = utility.get_byte_array(padded_encoded_str)
     
-
+    with open(output_file, 'wb') as out:
+        # Serialize data to file
+        pickle.dump((frequencies, byte_data), out)
+    return output_file
+    
 
 def build_tree(frequencies):
     ''' Build Huffman tree and return its root '''
