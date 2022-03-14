@@ -28,3 +28,9 @@ def compress(input_file, output_path):
     s = data[index]
     length = len(data)
     codes = []
+    
+    while index < length - 1:
+        c = data[index + 1]
+        if s + c in chars:
+            s = s + c
+            index += 1
