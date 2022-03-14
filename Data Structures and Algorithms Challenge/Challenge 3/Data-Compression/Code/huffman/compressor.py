@@ -22,7 +22,7 @@ def compress(input_file, output_path):
 
     # Get frequency table from data
     frequencies = collections.Counter(data)
-    
+    root = build_tree(frequencies)
     
     
 
