@@ -42,3 +42,8 @@ def build_tree(frequencies):
 
 def create_queue_from_frequencies(frequencies):
     ''' Create priority queue from frequency table '''
+    queue = PriorityQueue()
+    for k, v in frequencies.items():
+        n = Node(k, v)
+        queue.put((n.freq, n))
+    return queue
