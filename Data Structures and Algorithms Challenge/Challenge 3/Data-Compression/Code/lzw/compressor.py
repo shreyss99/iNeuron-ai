@@ -34,3 +34,10 @@ def compress(input_file, output_path):
         if s + c in chars:
             s = s + c
             index += 1
+            
+        else:
+            codes.append(dic[s])
+            max_code += 1
+            dic[s + c] = max_code
+            s = c
+            index += 1
