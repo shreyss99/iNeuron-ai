@@ -15,6 +15,7 @@ def compress(input_file, output_path):
 
     codes = encode(data)
     
+    # Write codes into file with 2-bytes for each code
     with open(output_file, 'wb') as out:
         for c in codes:
             out.write((c).to_bytes(2, byteorder='big'))
