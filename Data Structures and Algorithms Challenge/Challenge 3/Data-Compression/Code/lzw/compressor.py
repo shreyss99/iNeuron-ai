@@ -14,3 +14,12 @@ def compress(input_file, output_path):
         data = f.read()
 
     codes = encode(data)
+    
+    
+    
+    def encode(data):
+    
+    # Initialize dictionary
+    dic = {chr(c): c for c in range(0, 256)}
+    chars = dic.keys()
+    max_code = 255
