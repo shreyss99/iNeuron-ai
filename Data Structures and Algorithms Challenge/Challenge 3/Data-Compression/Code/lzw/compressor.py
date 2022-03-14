@@ -15,6 +15,11 @@ def compress(input_file, output_path):
 
     codes = encode(data)
     
+    with open(output_file, 'wb') as out:
+        for c in codes:
+            out.write((c).to_bytes(2, byteorder='big'))
+
+    return output_file
     
     
     def encode(data):
@@ -41,3 +46,7 @@ def compress(input_file, output_path):
             dic[s + c] = max_code
             s = c
             index += 1
+        
+        codes.append(dic[s])
+        
+    return codes
