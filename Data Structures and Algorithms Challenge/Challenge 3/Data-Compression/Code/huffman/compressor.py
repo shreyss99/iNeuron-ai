@@ -29,11 +29,15 @@ def compress(input_file, output_path):
 
 def build_tree(frequencies):
     ''' Build Huffman tree and return its root '''
-    q = create_queue_from_frequencies(frequencies)
-    while q.qsize() > 1:
-        left = q.get()[1]
-        right = q.get()[1]
-    
+    queue = create_queue_from_frequencies(frequencies)
+    while queue.qsize() > 1:
+        left = queue.get()[1]
+        right = queue.get()[1]
+        new_node = Node('', left.freq + right.freq, left, right)
+        queue.put((new_node.freq, new_node))
+
+    root = queue.get()[1]
+    return root
     
 
 def create_queue_from_frequencies(frequencies):
