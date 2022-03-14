@@ -23,7 +23,9 @@ def compress(input_file, output_path):
     # Get frequency table from data
     frequencies = collections.Counter(data)
     root = build_tree(frequencies)
-    
+    encoded_str = utility.get_encoded_str(root, data)
+    padded_encoded_str = utility.pad_encoded_str(encoded_str)
+    byte_data = utility.get_byte_array(padded_encoded_str)
     
 
 
@@ -43,7 +45,7 @@ def build_tree(frequencies):
 def create_queue_from_frequencies(frequencies):
     ''' Create priority queue from frequency table '''
     queue = PriorityQueue()
-    for k, v in frequencies.items():
-        n = Node(k, v)
+    for key, value in frequencies.items():
+        n = Node(key, value)
         queue.put((n.freq, n))
     return queue
