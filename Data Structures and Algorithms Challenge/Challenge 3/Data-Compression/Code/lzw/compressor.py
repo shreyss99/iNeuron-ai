@@ -5,8 +5,6 @@ def compress(input_file, output_path):
     
     # Get input file name and extension
     input_filename, input_fileext = os.path.splitext(os.path.basename(input_file))
-        
-def compress(input_file, output_path):
     
     # Store output file name and path
     output_filename = 'Compressed_' + input_filename + '.txt'
@@ -16,8 +14,8 @@ def compress(input_file, output_path):
         data = f.read()
 
     codes = encode(data)
-    
-    # Write codes into file with 2-bytes for each code
+
+    # write codes into file with 2-bytes for each code
     with open(output_file, 'wb') as out:
         for c in codes:
             out.write((c).to_bytes(2, byteorder='big'))
