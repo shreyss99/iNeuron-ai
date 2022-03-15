@@ -9,7 +9,7 @@ def compress(input_file, output_path):
     input_filename, input_fileext = os.path.splitext(os.path.basename(input_file))
     
     # Store output file name and path
-    output_filename = 'Compressed_IMAGE_' + input_filename + '.png'
+    output_filename = 'Compressed_' + input_filename + '.png'
     output_file = os.path.join(output_path, output_filename)
     
     # Open image and get its dimensions
