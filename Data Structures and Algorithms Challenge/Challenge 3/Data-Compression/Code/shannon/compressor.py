@@ -13,4 +13,9 @@ def compress(input_file, output_path):
     output_filename = 'Compressed_' + input_filename + '.txt'
     output_file = os.path.join(output_path, output_filename)
     
-    
+    # Open file
+    with open(input_file, 'r') as f:
+        data = f.read()
+
+    # Calculate frequencies of elements using counter collection
+    frequencies = collections.Counter(data)
