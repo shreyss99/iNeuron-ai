@@ -40,3 +40,11 @@ def compress(input_file, output_path):
     
     def create_nodes_from_frequencies(frequencies):
     ''' Create node list from frequency table and sort it by frequency, then by alphabet in descending order '''
+    
+    nodes = []
+    for key, value in frequencies.items():
+        nodes.append(Node(key, value))
+        
+    # Sort by frequency, then by alphabet
+    nodes.sort(key=attrgetter('freq', 'char'), reverse=True)
+    return nodes
