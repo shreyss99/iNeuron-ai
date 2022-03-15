@@ -67,3 +67,12 @@ def compress(input_file, output_path):
     second_half_total = 0
     index = length
     
+    while (index >= 0) and (second_half_total < (total - second_half_total)):
+        index -= 1
+        second_half_total += nodes[index].freq
+
+    diff1 = second_half_total - (total - second_half_total)
+    diff2 = abs(diff1 - 2 * nodes[index].freq)
+    if diff2 < diff1:
+        index += 1
+    return index
