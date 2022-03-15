@@ -13,7 +13,7 @@ def compress(input_file, output_path):
     input_filename, input_fileext = os.path.splitext(os.path.basename(input_file))
     
     # Store output file name and path
-    output_filename = 'Compressed_' + input_filename + '.txt'
+    output_filename = 'Compressed_HUFFMAN_' + input_filename + '.txt'
     output_file = os.path.join(output_path, output_filename)
     
     # Read file
