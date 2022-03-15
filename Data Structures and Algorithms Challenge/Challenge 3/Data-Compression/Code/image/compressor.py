@@ -20,6 +20,6 @@ def compress(input_file, output_path):
     compressed_image = image.resize((height,width), Image.ANTIALIAS)
     
     # Save compressed image at the output path
-    save_compressed_file = compressed_image.save(output_filename, quality=100, optimize=True) 
+    save_compressed_file = compressed_image.save(output_file, quality=100, optimize=True) 
     
     return output_file
