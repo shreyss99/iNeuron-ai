@@ -13,3 +13,11 @@ def compress(input_file, output_path):
     # Store output file name and path
     output_filename = 'Compressed_' + input_filename + '.mp3'
     output_file = os.path.join(output_path, output_filename)
+    
+    # Fetch the file 
+    compressed = pydub.AudioSegment.from_file(input_file)
+    
+    # Save the compressed file
+    compressed.export(output_file, format = "wav")
+
+    return output_file
