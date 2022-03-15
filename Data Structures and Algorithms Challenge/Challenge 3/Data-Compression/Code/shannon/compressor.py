@@ -19,3 +19,16 @@ def compress(input_file, output_path):
 
     # Calculate frequencies of elements using counter collection
     frequencies = collections.Counter(data)
+    
+    nodes = create_nodes_from_frequencies(frequencies)
+    root = build_tree(nodes)
+    
+    
+    
+    def build_tree(nodes):
+    ''' Build binary tree from node list '''
+    
+    
+    
+    def create_nodes_from_frequencies(frequencies):
+    ''' Create node list from frequency table and sort it '''
