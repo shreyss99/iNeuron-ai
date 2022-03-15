@@ -10,7 +10,7 @@ def compress(input_file, output_path):
     input_filename, input_fileext = os.path.splitext(os.path.basename(input_file))
     
     # Output file name and path
-    output_filename = input_filename + '.zip'
+    output_filename = 'Compressed_ZIP_' + input_filename + '.zip'
     output_file = os.path.join(output_path, output_filename)
     
     # Add compression type to DEFLATED
