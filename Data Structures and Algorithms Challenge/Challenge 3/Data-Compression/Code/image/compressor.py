@@ -16,3 +16,11 @@ def compress(input_file, output_path):
     # Open image and get its dimensions
     image = Image.open(input_file)
     height, width = image.size
+    
+    # Using resize option and ANTIALIAS to compress the image and reduce jerkyness
+    compressed_image = image.resize((height,width), Image.ANTIALIAS)
+    
+    # Save compressed image at the output path
+    save_compressed_file = compressed_image.save(output_filename, quality=100, optimize=True) 
+    
+    return output_file
