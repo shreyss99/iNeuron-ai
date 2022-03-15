@@ -62,4 +62,8 @@ def compress(input_file, output_path):
     of right part as possible. Return the index where node list
     will be splitted.'''
     
+    length = len(nodes)
+    total = sum([n.freq for n in nodes])
+    second_half_total = 0
+    index = length
     
