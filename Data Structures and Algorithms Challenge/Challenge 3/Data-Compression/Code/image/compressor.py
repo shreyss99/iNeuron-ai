@@ -12,3 +12,7 @@ def compress(input_file, output_path):
     # Store output file name and path
     output_filename = "Compressed_" + input_filename + '.png'
     output_file = os.path.join(output_path, output_filename)
+    
+    # Open image and get its dimensions
+    image = Image.open(input_file)
+    height, width = image.size
