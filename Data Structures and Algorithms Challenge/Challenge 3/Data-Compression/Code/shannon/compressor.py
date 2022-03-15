@@ -54,3 +54,12 @@ def compress(input_file, output_path):
     # Sort by frequency, then by alphabet
     nodes.sort(key=attrgetter('freq', 'char'), reverse=True)
     return nodes
+    
+    
+    def split(nodes):
+    '''Split ordered node list into two parts, with
+    total frequency counts of left part as close to total
+    of right part as possible. Return the index where node list
+    will be splitted.'''
+    
+    
