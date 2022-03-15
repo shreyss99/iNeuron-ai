@@ -23,6 +23,12 @@ def compress(input_file, output_path):
     nodes = create_nodes_from_frequencies(frequencies)
     root = build_tree(nodes)
     
+    codes = utility.get_codes(root)
+    encoded_str = utility.get_encoded_str(root, data)
+    padded_encoded_str = utility.pad_encoded_str(encoded_str)
+    byte_array = utility.get_byte_array(padded_encoded_str)
+
+    
     
     
     def build_tree(nodes):
