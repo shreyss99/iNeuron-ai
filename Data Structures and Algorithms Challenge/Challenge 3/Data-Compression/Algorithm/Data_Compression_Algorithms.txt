@@ -1,9 +1,24 @@
-Q) What is Data Compression?
+- What is Data Compression?
 
 Data Compression is the process of encoding information using fewer bits than a decoded representation would use through the use of specific encoding schemes.
 
 
-Q) Why do we need Data Compression ?
+- Why do we need Data Compression ?
 
 Compression is needed because it helps to reduce the consumption of expensive resources such as a hard disk or transmission bandwidth. As an uncompressed text or multimedia (speech, image, or video) data requires a huge amount of bits to represent them and thus require large bandwidth.
+
+
+- Types of Compression Techniques:
+
+A) Lossless:
+
+- In this, the redundant information contained in the data is removed.
+- Due to the removal of such information, there is no loss of the data of interest.
+- If the data has been losslessly compressed, the original data can be recovered exactly from the compressed data.
+
+B) Lossy:
+
+- There is a loss of information in a controlled manner.
+- The lossy compression is therefore not completely reversible.
+- But the advantage of this type is higher compression ratios than the lossless compression.
 
