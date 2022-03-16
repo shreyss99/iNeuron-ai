@@ -36,7 +36,7 @@ def compress(input_file, output_path):
     return output_file
     
     
-    def build_tree(nodes):
+def build_tree(nodes):
     ''' Build binary tree from node list '''
     
     length = len(nodes)
@@ -49,8 +49,9 @@ def compress(input_file, output_path):
     return Node('', left.freq + right.freq, left, right)
     
     
-    def create_nodes_from_frequencies(frequencies):
-    ''' Create node list from frequency table and sort it by frequency, then by alphabet in descending order '''
+def create_nodes_from_frequencies(frequencies):
+    ''' Create node list from frequency table and sort it by frequency, 
+    then by alphabet in descending order '''
     
     nodes = []
     for key, value in frequencies.items():
@@ -61,7 +62,7 @@ def compress(input_file, output_path):
     return nodes
     
     
-    def split(nodes):
+def split(nodes):
     '''Split ordered node list into two parts, with
     total frequency counts of left part as close to total
     of right part as possible. Return the index where node list
@@ -78,6 +79,8 @@ def compress(input_file, output_path):
 
     diff1 = second_half_total - (total - second_half_total)
     diff2 = abs(diff1 - 2 * nodes[index].freq)
+    
     if diff2 < diff1:
         index += 1
+        
     return index
