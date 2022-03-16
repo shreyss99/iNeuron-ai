@@ -37,3 +37,5 @@ def compress(input_file, output_path):
 
     # Download the compressed file
     task.download()
+    
+    return output_file
