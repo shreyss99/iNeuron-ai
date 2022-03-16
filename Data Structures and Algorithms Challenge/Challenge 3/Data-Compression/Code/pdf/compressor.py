@@ -1,6 +1,5 @@
 from pylovepdf.ilovepdf import ILovePdf
 import os
-import pathlib
 import glob
 
 # public key
@@ -20,7 +19,7 @@ def compress(input_file, output_path):
     ''' We are using ilovepdf API for compression. So need a public-key to use this module, 
     for that login on to https://developer.ilovepdf.com/ 
     and public key will be visible in the ‘My Projects’ section '''
-    public_key = 'Your public key'
+    public_key = 'project_public_2583a7f6e22e3939cc80ba1c2a7ce2f5_Z4p_S75956e93c86bc4bc6eaa988100783b30'
     
     # Creating a ILovePdf object
     ilovepdf = ILovePdf(public_key, verify_ssl=True)
@@ -37,5 +36,13 @@ def compress(input_file, output_path):
 
     # Download the compressed file
     task.download()
+    
+    pattern = output_path + "*.pdf"
+    result = glob.glob(pattern)
+    
+    for file_name in result:
+        old_name = file_name
+        new_name = output_file
+        os.rename(old_name, new_name)
     
     return output_file
