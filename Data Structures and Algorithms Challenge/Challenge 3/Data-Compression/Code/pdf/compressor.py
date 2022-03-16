@@ -21,3 +21,9 @@ def compress(input_file, output_path):
     for that login on to https://developer.ilovepdf.com/ 
     and public key will be visible in the ‘My Projects’ section '''
     public_key = 'Your public key'
+    
+    # creating a ILovePdf object
+    ilovepdf = ILovePdf(public_key, verify_ssl=True)
+    
+    # assigning a new compress task
+    task = ilovepdf.new_task('compress')
