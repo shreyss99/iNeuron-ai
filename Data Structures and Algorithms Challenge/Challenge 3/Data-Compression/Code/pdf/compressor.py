@@ -16,3 +16,8 @@ def compress(input_file, output_path):
     # Store output file name and path
     output_filename = 'Compressed_' + input_filename + '.pdf'
     output_file = os.path.join(output_path, output_filename)
+    
+    ''' We are using ilovepdf API for compression. So need a public-key to use this module, 
+    for that login on to https://developer.ilovepdf.com/ 
+    and public key will be visible in the ‘My Projects’ section '''
+    public_key = 'Your public key'
