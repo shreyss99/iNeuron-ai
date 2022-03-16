@@ -1,24 +1,34 @@
-- What is Data Compression?
+(A) What is Data Compression?
 
 Data Compression is the process of encoding information using fewer bits than a decoded representation would use through the use of specific encoding schemes.
 
 
-- Why do we need Data Compression ?
+(B) Why do we need Data Compression ?
 
-Compression is needed because it helps to reduce the consumption of expensive resources such as a hard disk or transmission bandwidth. As an uncompressed text or multimedia (speech, image, or video) data requires a huge amount of bits to represent them and thus require large bandwidth.
+Compression is needed because it helps to reduce the consumption of expensive resources such as a hard disk or transmission bandwidth. 
+As an uncompressed text or multimedia (speech, image, or video) data requires a huge amount of bits to represent them and thus require large bandwidth.
 
 
-- Types of Compression Techniques:
+(C) Types of Compression Techniques:
 
-A) Lossless:
+	1) Lossless:
 
-- In this, the redundant information contained in the data is removed.
-- Due to the removal of such information, there is no loss of the data of interest.
-- If the data has been losslessly compressed, the original data can be recovered exactly from the compressed data.
+	- In this, the redundant information contained in the data is removed.
+	- Due to the removal of such information, there is no loss of the data of interest.	
+	- If the data has been losslessly compressed, the original data can be recovered exactly from the compressed data.
 
-B) Lossy:
+	2) Lossy:
 
-- There is a loss of information in a controlled manner.
-- The lossy compression is therefore not completely reversible.
-- But the advantage of this type is higher compression ratios than the lossless compression.
+	- There is a loss of information in a controlled manner.
+	- The lossy compression is therefore not completely reversible.
+	- But the advantage of this type is higher compression ratios than the lossless compression.
+	
+
+(D) Measuring Performance of Compression Algorithms:
+
+A way of measuring how well a compression algorithm compresses a given set of data is to look at the ratio of the number of bits required to represent the data before compression
+and the number of bits required to represent the data after compression. This ratio is called the compression ratio.
+
+Compression ration = (size of uncompressed file) / (size of compressed file)
+
 
