@@ -31,3 +31,9 @@ def compress(input_file, output_path):
     # Adding the input pdf file and setting output directory
     task.add_file(input_file)
     task.set_output_folder(output_path)
+    
+    # Execute the compression task
+    task.execute()
+
+    # Download the compressed file
+    task.download()
