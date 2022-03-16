@@ -19,7 +19,7 @@ def compress(input_file, output_path):
     ''' We are using ilovepdf API for compression. So need a public-key to use this module, 
     for that login on to https://developer.ilovepdf.com/ 
     and public key will be visible in the ‘My Projects’ section '''
-    public_key = 'project_public_2583a7f6e22e3939cc80ba1c2a7ce2f5_Z4p_S75956e93c86bc4bc6eaa988100783b30'
+    public_key = 'Your public key here'
     
     # Creating a ILovePdf object
     ilovepdf = ILovePdf(public_key, verify_ssl=True)
