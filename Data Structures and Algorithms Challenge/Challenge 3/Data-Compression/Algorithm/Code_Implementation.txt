@@ -1,20 +1,26 @@
-(E) Implementation of Compression Algorithms:
+(A) Implementation of Compression Algorithms:
 	
 	1) LZW: 
 	   
 		Implementation:
 		
-		1) We have used DICTIONARY data structure to store the characters and their corresponding ASCII value from range 0 to 255.
-		2) We have used a LIST data structure for storing the codes of the data to be compressed.
-		3) We run a loop till data length and check if the previous and current character of loop is already existing in the dictionary of characters.
+		- We have used DICTIONARY data structure to store the characters and their corresponding ASCII value from range 0 to 255.
+		- We have used a LIST data structure for storing the codes of the data to be compressed.
+		- We run a loop till data length and check if the previous and current character of loop is already existing in the dictionary of characters.
 		   If yes, we make the previous character as the current value and increment the counter.
 		   If no, then we store the previous character in the codes dictionary.
-		4) We repeat the process and store the character in codes dictionary.
+		- We repeat the process and store the character in codes dictionary.
 
 
 	2) HUFFMAN:
 	
 		Implementation:
+		
+		- We use the TREE and PRIORITY QUEUE data structures in Huffman encoding.
+		- The frequencies of the data is computed and used to create the Huffman tree using queue.
+		- The 
+		
+		
 		
 		
 		   
