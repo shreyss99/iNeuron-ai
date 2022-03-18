@@ -32,3 +32,14 @@ and the number of bits required to represent the data after compression. This ra
 Compression ration = (size of uncompressed file) / (size of compressed file)
 
 
+(E) Compression Algorithms:
+
+	1) ZIP:
+	
+	- ZIP is a common file format that’s used to compress one or more files together into a single location. 
+	- This reduces file size and makes it easier to transport or store. 
+	- A recipient can extract a ZIP file after transport and use the file in the original format. 
+	- But with zipped files, the contents are compressed, which reduces the amount of data used by your computer. 
+	- Another way to describe ZIP files is as an archive. The archive contains all the compressed files in one location. 
+
+
