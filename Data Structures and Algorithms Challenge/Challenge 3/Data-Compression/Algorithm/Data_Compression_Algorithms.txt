@@ -41,5 +41,15 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 	- A recipient can extract a ZIP file after transport and use the file in the original format. 
 	- But with zipped files, the contents are compressed, which reduces the amount of data used by your computer. 
 	- Another way to describe ZIP files is as an archive. The archive contains all the compressed files in one location. 
+	
+	2) LZW:
+	
+	- LZW compression is the compression of a file into a smaller file using a table-based lookup algorithm invented by Abraham Lempel, Jacob Ziv, and Terry Welch. 
+	- LZW compression works by reading a sequence of symbols, grouping the symbols into strings, and converting the strings into codes.
+	
+	  Algorithm:
+	
+	  - 
+	
 
 
