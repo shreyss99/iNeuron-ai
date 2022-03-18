@@ -18,7 +18,9 @@
 		
 		- We use the TREE and PRIORITY QUEUE data structures in Huffman encoding.
 		- The frequencies of the data is computed and used to create the Huffman tree using queue.
-		- The 
+		- The PRIORITY QUEUE is used to compute the count of elements in the data and then the count and the corresponding character is stored as a node of TREE.
+		- The tree node created above is then inserted into the PRIORITY QUEUE.
+		- Once the PRIORITY QUEUE is 
 		
 		
 		
