@@ -20,7 +20,10 @@
 		- The frequencies of the data is computed and used to create the Huffman tree using queue.
 		- The PRIORITY QUEUE is used to compute the count of elements in the data and then the count and the corresponding character is stored as a node of TREE.
 		- The tree node created above is then inserted into the PRIORITY QUEUE.
-		- Once the PRIORITY QUEUE is 
+		- Once the PRIORITY QUEUE is created, we then build the Huffman Tree by combining the nodes in the PRIORITY QUEUE.
+		- Next, we have defined some functions in utility class which we use to get the encoded string.
+		- We assign the codes (0 or 1). If it is the left child we assign the code 0 else 1 and repeat recursively till the entire node has been given a code.
+		- Once the nodes have been given code, we then iterate upon the data and based on the codes assigned earlier encode the string.
 		
 		
 		
