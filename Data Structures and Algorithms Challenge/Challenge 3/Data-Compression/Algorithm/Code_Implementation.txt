@@ -1,0 +1,30 @@
+(E) Implementation of Compression Algorithms:
+	
+	1) LZW:  
+	  
+		Pseudocde:
+		
+		1     Initialize table with single character strings
+		2     P = first input character
+		3     WHILE not end of input stream
+		4          C = next input character
+		5          IF P + C is in the string table
+		6            P = P + C
+		7          ELSE
+		8            output the code for P
+		9          add P + C to the string table
+		10           P = C
+		11         END WHILE
+		12    output code for P 
+	   
+	   
+		Implementation:
+		
+		1) We have used DICTIONARY data structure to store the characters and their corresponding ASCII value from range 0 to 255.
+		2) We have used a LIST data structure for storing the codes of the data to be compressed.
+		3) We run a loop till data length 
+	   
+
+	
+
+
