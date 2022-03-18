@@ -73,5 +73,11 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 	   
 	3) HUFFMAN:
 	
+	- It assigns variable-length codes to input characters, lengths of the assigned codes are based on the frequencies of corresponding characters. 
+	- The most frequent character gets the smallest code and the least frequent character gets the largest code.
+	- There are mainly two major parts in Huffman Coding:
+		Build a Huffman Tree from input characters.
+		Traverse the Huffman Tree and assign codes to characters.
+	
 
 
