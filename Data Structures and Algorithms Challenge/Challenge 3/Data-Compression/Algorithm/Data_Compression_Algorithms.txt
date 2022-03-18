@@ -87,6 +87,12 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 		- Make the first extracted node as its left child and the other extracted node as its right child. Add this node to the min heap.
 		- Repeat steps#2 and #3 until the heap contains only one node. The remaining node is the root node and the tree is complete.
 
+		Steps to print codes from Huffman Tree:
+		- Traverse the tree formed starting from the root. 
+		- Maintain an auxiliary array. 
+		- While moving to the left child, write 0 to the array. 
+		- While moving to the right child, write 1 to the array. 
+		- Print the array when a leaf node is encountered.
 	
 
 
