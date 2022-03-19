@@ -110,7 +110,7 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 		
 	
 	
-	OBSERVATIONS:
+	GENERAL OBSERVATIONS:
 	
 	- The ZIP Algorithm can be used to compress majority type of files of diffeent file formats - image files, PDF files, audio files, video files, text files etc.
 	- The ZIP internally uses DEFLATE algorithm which works very well on text files. 
@@ -118,8 +118,3 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 	- Hence we have implemented the different copression algorithms for different file types to ensure more compression.
 	
 	
-	
-	
-	
-
-
