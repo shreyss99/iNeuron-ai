@@ -7,3 +7,13 @@ class Node(object):
         self.freq = freq
         self.left = left
         self.right = right
+        
+        
+    def is_leaf(self):
+        return self.left is None and self.right is None
+
+
+    def __lt__(self, other):
+        ''' Sorting criteria for inserting into priority queue '''
+        
+        return (self.freq < other.freq)
