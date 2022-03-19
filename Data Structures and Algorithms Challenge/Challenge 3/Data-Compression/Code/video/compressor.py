@@ -4,7 +4,7 @@ import os
 
 
 def compress(input_file, output_path):
-'''Get input file name and extension'''
+    '''Get input file name and extension'''
     
     # Get input file name and extension
     input_filename, input_fileext = os.path.splitext(os.path.basename(input_file))
