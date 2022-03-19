@@ -19,3 +19,16 @@ def compress(input_file, output_path):
     compression_value = 50
     width  = cap.get(3) * compression_value / 100
     height = cap.get(4) * compression_value / 100
+    
+    out_video = cv2.VideoWriter(output_file, cv2.VideoWriter_fourcc(*'mp4v'), 20.0, (int(width), int(height)), True)
+    
+    # Write each frame from the video into output video
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        if ret:
+            frameX = rescale_frame(frame, compression_value)
+            out_video.write(frameX) 
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        else:
+            break
