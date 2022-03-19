@@ -55,6 +55,15 @@
 		- Then we add the file to be compressed and the output path where compressed file needs to be stored.
 		- The compression task is executed and the compressed file gets downloaded at the specified output location.
 		
+	
+	6) IMAGE:
+	
+		- For compression of image files, we will use the PIL library of Python.
+		- We open the image using the PIL open function and store the dimensions of the image.
+		- Then we use the resize function from PIL to compress the image.
+		- We also use the ANTIALIAS option which reduces the visual defects when high-resolution images are presented in lower-resolution.
+		- In addition to this, we also save the compressed image with 100% quality and optimize as True for compression.
+		
 		
 		   
 	   
