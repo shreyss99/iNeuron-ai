@@ -72,13 +72,14 @@
 		- We import the wav file using the AudioSegment.
 		- Once imported, we export the file by passing the output filename and format.
 		
-		
-		
-		
-		
-		   
-	   
-
 	
-
-
+	8) VIDEO:
+	
+		- The OpenCV library is used in video compression.
+		- Using the VideoCapture function, we get it and store its dimensions.
+		- the VideoWriter function is used to write the output file and the mp4 video codec is used.
+		- Inside the loop extract all the frames of the video using read() method.
+		- Pass these frame along with the compression size to a rescaling function.
+		- It returns the resized frame as per the users compression input using resize method.
+		
+		
