@@ -54,6 +54,6 @@ Compression ratio = 10033 / 6065 = 1.654
 
 ### Output Interpretation:
 	
-	- We have 8 different files for - Huffman, LZW, Shannon-Fano, PDF, WAV, ZIP, Image and Video.
-	- We have duplicated all of them. We will run each file using the ZIP algorithm and the corresponding individual algorithms.
-	- In the output screenshots, we have stored the screenshots and compressed files foeach file using the ZIP algorithm and using the corresponding better algorithm.
+- We have 8 different files for - Huffman, LZW, Shannon-Fano, PDF, WAV, ZIP, Image and Video.
+- We have duplicated all of them. We will run each file using the ZIP algorithm and the corresponding individual algorithms.
+- In the output screenshots, we have stored the screenshots and compressed files foeach file using the ZIP algorithm and using the corresponding better algorithm.
