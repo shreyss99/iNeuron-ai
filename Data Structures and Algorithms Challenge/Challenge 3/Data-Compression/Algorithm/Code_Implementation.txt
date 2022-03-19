@@ -65,6 +65,17 @@
 		- In addition to this, we also save the compressed image with 100% quality and optimize as True for compression.
 		
 		
+	7) WAV-MP3:
+	
+		- We use the PyDub module from Python.
+		- The AudioSegment inside PyDub can be used to work with audio files.
+		- We import the wav file using the AudioSegment.
+		- Once imported, we export the file by passing the output filename and format.
+		
+		
+		
+		
+		
 		   
 	   
 
