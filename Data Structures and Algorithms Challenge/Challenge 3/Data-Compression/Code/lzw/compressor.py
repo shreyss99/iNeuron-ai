@@ -48,6 +48,6 @@ def encode(data):
             s = c
             index += 1
         
-        codes.append(dic[s])
+    codes.append(dic[s])
         
     return codes
