@@ -51,3 +51,19 @@ def _assign_codes(current, codes, code):
         code.append('1')
         _assign_codes(current.right, codes, code)
         code.pop()
+        
+        
+def get_byte_array(padded_encoded_str):
+
+    ''' Convert padded encoded string into bytes
+    for storing to file in bytes '''
+    
+    b = bytearray()
+    length = len(padded_encoded_str)
+    for i in range(0, length, 8):
+        byte = padded_encoded_str[i:i + 8]
+        b.append(int(byte, 2))
+    return b
+
+
+
