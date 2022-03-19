@@ -33,6 +33,11 @@ def compress(input_file, output_path):
         else:
             break
             
+    cap.release()
+    cv2.destroyAllWindows()
+    
+    return output_file
+            
             
 # Resizing all frames
 def rescale_frame(frame, percent):
