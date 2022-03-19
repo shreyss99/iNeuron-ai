@@ -116,4 +116,11 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 	- The ZIP internally uses DEFLATE algorithm which works very well on text files. 
 	- But the same process, when applied to other file formats does not give us good compression ratio.
 	- Hence we have implemented the different copression algorithms for different file types to ensure more compression.
-	- We have implemented the ZIP as the main algorithm but to improve on its efficiency we have developed other algorithms as well.	
+	- We have implemented the ZIP as the main algorithm but to improve on its efficiency we have developed other algorithms as well.
+
+
+	OUTPUT:
+	
+	- We have 8 different files for - Huffman, LZW, Shannon-Fano, PDF, WAV, ZIP, Image and Video.
+	- We have duplicated all of them. We will run each file using the ZIP algorithm and the corresponding individual algorithms.
+	- In the output screenshots, we have stored the screenshots and compressed files foeach file using the ZIP algorithm and using the corresponding better algorithm.
