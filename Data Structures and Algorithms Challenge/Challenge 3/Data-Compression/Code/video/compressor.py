@@ -32,3 +32,11 @@ def compress(input_file, output_path):
                 break
         else:
             break
+            
+            
+# Resizing all frames
+def rescale_frame(frame, percent):
+    width = int(frame.shape[1] * percent / 100)
+    height = int(frame.shape[0] * percent / 100)
+    dimensions = (width, height)
+    return cv2.resize(frame, dimensions)
