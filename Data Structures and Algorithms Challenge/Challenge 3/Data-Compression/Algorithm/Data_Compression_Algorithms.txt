@@ -94,6 +94,7 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 		- While moving to the right child, write 1 to the array. 
 		- Print the array when a leaf node is encountered.
 		
+		
 	4) SHANNON-FANO:
 	
 	- Shannon Fano Algorithm is an entropy encoding technique for lossless data compression of multimedia. 
@@ -106,6 +107,19 @@ Compression ration = (size of uncompressed file) / (size of compressed file)
 		- Split the list into two parts, with the total probability of both the parts being as close to each other as possible.
 		- Assign the value 0 to the left part and 1 to the right part.
 		- Repeat steps 3 and 4 for each part, until all the symbols are split into individual subgroups.
+		
+	
+	
+	OBSERVATIONS:
+	
+	- The ZIP Algorithm can be used to compress majority type of files of diffeent file formats - image files, PDF files, audio files, video files, text files etc.
+	- The ZIP internally uses DEFLATE algorithm which works very well on text files. 
+	- But the same process, when applied to other file formats does not give us good compression ratio.
+	- Hence we have implemented the different copression algorithms for different file types to ensure more compression.
+	
+	
+	
+	
 	
 
 
