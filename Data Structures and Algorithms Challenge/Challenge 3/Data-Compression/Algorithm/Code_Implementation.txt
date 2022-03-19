@@ -47,6 +47,14 @@
 		- We assign the codes (0 or 1). If it is the left child we assign the code 0 else 1 and repeat recursively till the entire node has been given a code.
 		- We iterate upon the data and based on the codes assigned earlier encode the string.
 		
+	
+	5) PDF:
+	
+		- For PDF compression we will be using the ILovePdf API which uses a public key specific to the user in the process.
+		- We initialise an object of the above API using the public key and verify_ssl parameter.
+		- Then we add the file to be compressed and the output path where compressed file needs to be stored.
+		- The compression task is executed and the compressed file gets downloaded at the specified output location.
+		
 		
 		   
 	   
