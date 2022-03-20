@@ -44,3 +44,22 @@ print('Uncompressed size: {} bytes'.format(uncompressed_size))
 
 print('===== Using {} compression algorithm ======'.format(alg.upper()))
 output_file = ''
+
+if alg == 'huffman':
+    output_file = Code.huffman.compressor.compress(input_file, output_path)
+elif alg == 'lzw':
+    output_file = Code.lzw.compressor.compress(input_file, output_path)
+elif alg == 'shannon':
+    output_file = Code.shannon.compressor.compress(input_file, output_path)
+elif alg == 'zip':
+    output_file = Code.zip.compressor.compress(input_file, output_path)
+elif alg == 'image':
+    output_file = Code.image.compressor.compress(input_file, output_path)
+elif alg == 'wav':
+    output_file = Code.wav_mp3.compressor.compress(input_file, output_path)
+elif alg == 'pdf':
+    output_file = Code.pdf.compressor.compress(input_file, output_path)
+elif alg == 'pdf':
+    output_file = Code.pdf.compressor.compress(input_file, output_path)
+elif alg == 'video':
+    output_file = Code.video.compressor.compress(input_file, output_path)
