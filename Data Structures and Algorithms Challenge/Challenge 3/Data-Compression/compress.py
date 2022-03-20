@@ -38,3 +38,9 @@ if not os.path.isdir(output_path):
     print("ERROR: {} isn't a path or doesn't exist.".format(output_path))
     sys.exit(1)
     
+    
+uncompressed_size = os.stat(input_file).st_size
+print('Uncompressed size: {} bytes'.format(uncompressed_size))
+
+print('===== Using {} compression algorithm ======'.format(alg.upper()))
+output_file = ''
