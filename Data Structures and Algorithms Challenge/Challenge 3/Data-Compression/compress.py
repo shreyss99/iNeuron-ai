@@ -63,3 +63,12 @@ elif alg == 'pdf':
     output_file = Code.pdf.compressor.compress(input_file, output_path)
 elif alg == 'video':
     output_file = Code.video.compressor.compress(input_file, output_path)
+    
+    
+# Print some compression information
+
+compressed_size = os.stat(output_file).st_size
+print('Output file: {}'.format(output_file))
+print('Compressed size: {} bytes'.format(compressed_size))
+print('Compression ratio = {0} / {1} = {2:.3f}'.format(uncompressed_size, compressed_size, uncompressed_size / compressed_size))
+sys.exit(0)
