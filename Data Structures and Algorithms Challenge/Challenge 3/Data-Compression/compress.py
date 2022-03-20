@@ -10,3 +10,14 @@ import os
 import argparse
 import sys
 
+
+'''
+This script is used for executing compression
+via command line interface
+'''
+# Command line parser
+parser = argparse.ArgumentParser(description='Compress a file')
+parser.add_argument('input_file', type=str, help='Input file to be compressed')
+parser.add_argument('output_path', type=str, help='Output path for storing compressed output file')
+parser.add_argument('--alg', help='Choose an algorithm, default is huffman', choices=['huffman', 'shannon', 'lzw', 'zip', 'image', 'wav', 'pdf', 'video'])
+args = parser.parse_args()
