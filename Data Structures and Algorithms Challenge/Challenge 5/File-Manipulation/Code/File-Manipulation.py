@@ -65,7 +65,18 @@ def main():
             print("The search process cannot be accomplished !")
 
 
+    elif option == 2:
+        sortFile()
+        
+    elif option == 2:
+        segregateFile()
+        
+    elif option == 2:
+        mergeFile()
 
+    else:
+        print("There is no such option")
+        
 
 # DRIVER FUNCTION CALL
 
