@@ -5,6 +5,8 @@ import glob
 
 
 def main():
+
+    # Print the menu
     print("Welcome to FILE MANIPULATION project")
     print()
     print("--------MENU-------")
@@ -13,6 +15,10 @@ def main():
     print("3 - Segregate Files")
     print("4 - Merge Files")
     print()
+
+    # Ask user for options and path
+    option = int(input("Choose one of the above 4 options: "))
+    path = input("Enter the path where you want to perform the above operation: ")
     
 
 # Define the driver code
