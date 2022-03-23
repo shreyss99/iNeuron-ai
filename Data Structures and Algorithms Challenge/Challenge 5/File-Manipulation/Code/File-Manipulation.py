@@ -55,7 +55,14 @@ def main():
         elif criteria == 2:
             searchFileName = input("Enter the name of the file to be searched: ")
             result = searchFile(path, searchFileName)
-
+            
+        print()
+        print("Search Result")
+        if len(result) > 0:
+            for i in result:
+                print(i)
+        else:
+            print("The search process cannot be accomplished !")
 
 
 
