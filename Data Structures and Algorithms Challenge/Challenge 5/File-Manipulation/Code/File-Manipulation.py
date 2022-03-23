@@ -9,7 +9,17 @@ def searchFile(path, criteria):
     
     result = []
 
-
+    # File Extension based search
+    if criteria[0] == ".":
+        directory = path
+        pathname = directory + "/**/*" + criteria
+        result = glob.glob(pathname, recursive=True)
+        
+    # File Name based search
+    else:
+        for root, dir, files in os.walk(path):
+            if criteria in files:
+                result.append(os.path.join(root, criteria))
 
     return result
     
