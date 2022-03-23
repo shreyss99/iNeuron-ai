@@ -4,6 +4,17 @@ import os
 import glob
 
 
+# SEARCH FUNCTION
+def searchFile(path, criteria):
+    
+    result = []
+
+
+
+    return result
+    
+    
+# DRIVER FUNCTION
 def main():
 
     # Print the menu
@@ -39,7 +50,7 @@ def main():
 
 
 
-# Define the driver code
+# DRIVER FUNCTION CALL
 
 if __name__ == "__main__":
     main()
