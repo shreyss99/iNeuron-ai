@@ -60,6 +60,14 @@ def segregateFile(path):
         # Ignore the . in file extension
         ext = ext[1:]
         
+        # If file has no extension, continue
+        if ext == '':
+            continue
+        
+        # If there exists a folder for the extension, move the file from path to that specific folder
+        if os.path.exists(path + '/' + ext):
+            shutil.move(path + '/' + file, path + '/' + ext + '/' + file)
+        
     
 # DRIVER FUNCTION
 def main():
