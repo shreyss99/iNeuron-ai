@@ -50,6 +50,9 @@ def sortFile(path, criteria):
 # SEGREGATE FUNCTION
 def segregateFile(path):
     
+    # List of all files in the path
+    list_of_files = os.listdir(path)
+    
     
 # DRIVER FUNCTION
 def main():
