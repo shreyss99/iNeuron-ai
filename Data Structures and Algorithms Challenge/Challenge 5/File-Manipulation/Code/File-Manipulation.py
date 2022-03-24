@@ -38,6 +38,11 @@ def sortFile(path, criteria):
     elif criteria == 2:
         list_of_files = filter(os.path.isfile, glob.glob(path + '/**/*', recursive=True))
         result = sorted(list_of_files, key = lambda x: os.stat(x).st_size)
+        
+    # File Time based sort
+    elif criteria == 3:
+        list_of_files = filter(os.path.isfile, glob.glob(path + '/**/*', recursive=True))
+        result = sorted(list_of_files, key = os.path.getmtime)
 
     return result
     
