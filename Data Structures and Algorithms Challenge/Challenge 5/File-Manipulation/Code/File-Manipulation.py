@@ -53,6 +53,13 @@ def segregateFile(path):
     # List of all files in the path
     list_of_files = os.listdir(path)
     
+    for file in list_of_files:
+    
+        # Get file name and extension
+        name, ext = os.path.splitext(file)
+        # Ignore the . in file extension
+        ext = ext[1:]
+        
     
 # DRIVER FUNCTION
 def main():
