@@ -103,9 +103,9 @@ def main():
         for i in result:
             print(i)
         
-        
-    elif option == 2:
-        segregateFile()
+    # SEGREGATE FILE PROCESSING
+    elif option == 3:
+        segregateFile(path)
         
     elif option == 2:
         mergeFile()
