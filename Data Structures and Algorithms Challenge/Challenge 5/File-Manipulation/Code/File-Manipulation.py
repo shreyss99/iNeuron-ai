@@ -2,6 +2,7 @@
 
 import os
 import glob
+import shutil
 
 
 # SEARCH FUNCTION
