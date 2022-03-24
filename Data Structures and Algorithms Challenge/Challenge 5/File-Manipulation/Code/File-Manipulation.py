@@ -56,22 +56,22 @@ def segregateFile(path):
     for file in list_of_files:
     
         # Get file name and extension
-        name, ext = os.path.splitext(file)
+        name, extension = os.path.splitext(file)
         # Ignore the . in file extension
-        ext = ext[1:]
+        extension = extension[1:]
         
         # If file has no extension, continue
-        if ext == '':
+        if extension == '':
             continue
         
         # If there exists a folder for the extension, move the file from path to that specific folder
-        if os.path.exists(path + '/' + ext):
-            shutil.move(path + '/' + file, path + '/' + ext + '/' + file)
+        if os.path.exists(path + '/' + extension):
+            shutil.move(path + '/' + file, path + '/' + extension + '/' + file)
             
         # If the folder does not exist, create a folder named based on extension and then copy files from path to the new folder
         else:
-            os.makedirs(path + '/' + ext)
-            shutil.move(path + '/' + file, path + '/' + ext + '/' + file)
+            os.makedirs(path + '/' + extension)
+            shutil.move(path + '/' + file, path + '/' + extension + '/' + file)
         
     
 # DRIVER FUNCTION
