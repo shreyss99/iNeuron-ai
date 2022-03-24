@@ -24,6 +24,26 @@ def searchFile(path, criteria):
     return result
     
     
+# SORT FUNCTION
+def searchFile(path, criteria):
+    
+    result = []
+
+    # File Extension based search
+    if criteria[0] == ".":
+        directory = path
+        pathname = directory + "/**/*" + criteria
+        result = glob.glob(pathname, recursive=True)
+        
+    # File Name based search
+    else:
+        for root, dir, files in os.walk(path):
+            if criteria in files:
+                result.append(os.path.join(root, criteria))
+
+    return result
+    
+    
 # DRIVER FUNCTION
 def main():
 
@@ -66,7 +86,12 @@ def main():
 
 
     elif option == 2:
-        sortFile()
+        print("Do you want to sort by file name, file size or file time?")
+        print("1 - Sort by File Name")
+        print("2 - Sort by File Size")
+        print("3 - Sort by File Time")
+        criteria = int(input("Choose one of the above 3 options: "))
+        
         
     elif option == 2:
         segregateFile()
