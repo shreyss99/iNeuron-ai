@@ -47,6 +47,10 @@ def sortFile(path, criteria):
     return result
     
     
+# SEGREGATE FUNCTION
+def segregateFile(path):
+    
+    
 # DRIVER FUNCTION
 def main():
 
@@ -102,6 +106,7 @@ def main():
         print("-----Sort Result-----")
         for i in result:
             print(i)
+        
         
     # SEGREGATE FILE PROCESSING
     elif option == 3:
