@@ -29,17 +29,6 @@ def sortFile(path, criteria):
     
     result = []
 
-    # File Extension based search
-    if criteria[0] == ".":
-        directory = path
-        pathname = directory + "/**/*" + criteria
-        result = glob.glob(pathname, recursive=True)
-        
-    # File Name based search
-    else:
-        for root, dir, files in os.walk(path):
-            if criteria in files:
-                result.append(os.path.join(root, criteria))
 
     return result
     
@@ -77,7 +66,7 @@ def main():
             result = searchFile(path, searchFileName)
             
         print()
-        print("Search Result")
+        print("-----Search Result-----")
         if len(result) > 0:
             for i in result:
                 print(i)
@@ -96,7 +85,7 @@ def main():
         result = sortFile(path, criteria)
             
         print()
-        print("Sort Result")
+        print("-----Sort Result-----")
         for i in result:
             print(i)
         
@@ -112,6 +101,5 @@ def main():
         
 
 # DRIVER FUNCTION CALL
-
 if __name__ == "__main__":
     main()
