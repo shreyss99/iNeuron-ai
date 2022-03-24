@@ -25,7 +25,7 @@ def searchFile(path, criteria):
     
     
 # SORT FUNCTION
-def searchFile(path, criteria):
+def sortFile(path, criteria):
     
     result = []
 
@@ -85,12 +85,20 @@ def main():
             print("The search process cannot be accomplished !")
 
 
+    # SORT FILE PROCESSING
     elif option == 2:
         print("Do you want to sort by file name, file size or file time?")
         print("1 - Sort by File Name")
         print("2 - Sort by File Size")
         print("3 - Sort by File Time")
         criteria = int(input("Choose one of the above 3 options: "))
+        
+        result = sortFile(path, criteria)
+            
+        print()
+        print("Sort Result")
+        for i in result:
+            print(i)
         
         
     elif option == 2:
