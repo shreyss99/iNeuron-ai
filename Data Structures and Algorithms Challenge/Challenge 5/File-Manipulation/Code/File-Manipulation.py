@@ -31,7 +31,8 @@ def sortFile(path, criteria):
     
     # File Name based sort
     if criteria == 1:
-        result = sorted(filter(os.path.isfile, glob.glob(path + '/**/*', recursive=True)))
+        list_of_files = filter(os.path.isfile, glob.glob(path + '/**/*', recursive=True))
+        result = sorted(list_of_files)
         
     # File Size based sort
     elif criteria == 2:
