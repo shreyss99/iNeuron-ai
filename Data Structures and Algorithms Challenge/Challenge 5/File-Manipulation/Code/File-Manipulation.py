@@ -28,7 +28,10 @@ def searchFile(path, criteria):
 def sortFile(path, criteria):
     
     result = []
-
+    
+    # File Name based sort
+    if criteria == 1:
+        result = sorted(filter(os.path.isfile, glob.glob(path + '/**/*', recursive=True)))
 
     return result
     
