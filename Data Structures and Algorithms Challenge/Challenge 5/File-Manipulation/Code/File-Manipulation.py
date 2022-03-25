@@ -3,7 +3,7 @@
 import os
 import glob
 import shutil
-
+import pyinputplus as pyip
 
 # SEARCH FUNCTION
 def searchFile(path, criteria):
@@ -89,8 +89,8 @@ def main():
     print()
 
     # Ask user for options and path
-    option = int(input("Choose one of the above 4 options: "))
-    path = input("Enter the path where you want to perform the above operation: ")
+    option = pyip.inputInt(prompt="Choose one of the above 4 options: ", greaterThan=0, lessThan=5)
+    path = pyip.inputStr(prompt="Enter the path where you want to perform the above operation: ")
     
     # SEARCH FILE PROCESSING
     if option == 1:
@@ -139,8 +139,10 @@ def main():
         
     # MERGE FILE PROCESSING
     elif option == 4:
-        mergeFile(path)
+        extension = input("Enter the extension for merging those files: ")
+        result = mergeFile(path, extension)
 
+    # NO OPTION
     else:
         print("There is no such option")
         
