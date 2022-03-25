@@ -13,6 +13,9 @@ FILE MANIPULATION ALGORITHM:
    - The extension based search makes use of glob (global) module which uses STRING data structure just like regex.
    - The file name based search makes use of walk method using TREE data structure. It generates the file names in a directory TREE by walking the TREE either top-down or bottom-up. 
 	For each directory in the TREE rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
+	
+	The time complexity for the file search will be O(n) because we are performing recursive file searching and it will visit every node of the TREE for file check. 
+	The space complexity is O(1) as we do not need any extra space.
 
 
 3) SORTING:
@@ -23,6 +26,9 @@ FILE MANIPULATION ALGORITHM:
    - For file size and file time based sort, the files are filtered by the above process.
     The sorting in LIST happens using the key based on the file size and the modified time stamp in ascending order.
 	
+	The internal sorted() method is based on Timsort algorithm - hybrid of merge and insertion sort. The time complexity for it is similar to merge sort - O(nlog n).
+	There is some space requirement for merging purpose and it is O(n).
+	
 	
 4) SEGREGATING:
    - In this, there is no criteria. We just ask for the path where we need to group files absed on file types.
@@ -30,4 +36,19 @@ FILE MANIPULATION ALGORITHM:
    - For all files, we extract its file extension and using LIST SLICING remove the '.' character.
    - If there exists already a folder for the current file type, we move the file from the path to that specific folder.
    - If not, then we create a directory based on TREE data structure with the and then move the file from the path to that new folder.
+   
+   For fetching the list of all files will be O(n) as it will traverse each file path. 
+   Space complexity will also be there because we are creating folders for grouping files and depends on the number of file types.
+   
+
+5) MERGING:
+
+	- In merging files, we need the file pat and the extension of files to be merged.
+	- We make a LIST of all files matching the provided file extension using glob.
+	- For csv and xlsx files, we can use the concat operation of pandas and combine the data in each file.
+	- For txt files, we create a new file in write mode and open each file and write its contents to the new file.
+	- For pdf files, we use the PyPDF2 file merger. We create a new file to which we append the pdf files after reading them.
+	
+	The time complexity will be O(n) because we will pick each file, read it and then merge it.
+	Also since we are creating a merged file. Let us say we have n files of size s. So the space complexity will be O(n*s).
 
