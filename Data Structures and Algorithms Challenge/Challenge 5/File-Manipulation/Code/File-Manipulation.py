@@ -86,6 +86,12 @@ def mergeFile(path, extension):
         mergedFile = pd.concat([pd.read_csv(f) for f in list_of_files])
         mergedFile.to_csv("Merged_{}.{}".format(extension, extension), index=False, encoding='utf-8')
         
+    # xlsx file merge same as csv
+    elif extension == 'xlsx':
+    
+        mergedFile = pd.concat([pd.read_excel(f) for f in list_of_files])
+        mergedFile.to_excel("Merged_{}.{}".format(extension, extension), index=False, encoding='utf-8')
+        
     
 # DRIVER FUNCTION
 def main():
