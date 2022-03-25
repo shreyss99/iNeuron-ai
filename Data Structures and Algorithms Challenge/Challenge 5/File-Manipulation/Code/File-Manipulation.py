@@ -73,6 +73,11 @@ def segregateFile(path):
         else:
             os.makedirs(path + '/' + extension)
             shutil.move(path + '/' + file, path + '/' + extension + '/' + file)
+            
+
+def mergeFile(path, extension):
+
+    list_of_files = [i for i in glob.glob('*' + extension)]
         
     
 # DRIVER FUNCTION
