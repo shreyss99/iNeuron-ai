@@ -136,8 +136,10 @@ def main():
     elif option == 3:
         segregateFile(path)
         
-    elif option == 2:
-        mergeFile()
+        
+    # MERGE FILE PROCESSING
+    elif option == 4:
+        mergeFile(path)
 
     else:
         print("There is no such option")
