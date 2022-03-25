@@ -20,7 +20,7 @@
 		   If yes, we make the previous character as the current value and increment the counter.
 		   If no, then we store the previous character in the codes dictionary.
 		- We repeat the process and store the character in codes dictionary.
-
+		- The overall time complexity obtained for this is O(n) ss the dictionary size is fixed and independent of the input length, because each byte is only read once and the complexity of the operation for each character is constant.
 
 	3) HUFFMAN:
 	
@@ -34,6 +34,7 @@
 		- Next, we have defined some functions in utility class which we use to get the encoded string.
 		- We assign the codes (0 or 1). If it is the left child we assign the code 0 else 1 and repeat recursively till the entire node has been given a code.
 		- Once the nodes have been given code, we then iterate upon the data and based on the codes assigned earlier encode the string.
+		- Extracting minimum frequency from the priority queue takes place 2*(n-1) times and its complexity is O(log n). So overall time complexity is O(nlog n).
 		
 		
 	4) SHANNON-FANO:
@@ -46,6 +47,8 @@
 		- Next, we have defined some functions in utility class which we use to get the encoded string.
 		- We assign the codes (0 or 1). If it is the left child we assign the code 0 else 1 and repeat recursively till the entire node has been given a code.
 		- We iterate upon the data and based on the codes assigned earlier encode the string.
+		- The time complexity runs similar to quick sort.
+Because we are splitting the tree nodes into 2 halves. If the partitions done each time can be very unbalanced the complexity may be O(n^2) else overall we have O(nlog n).
 		
 	
 	5) PDF:
