@@ -3,6 +3,7 @@
 import os
 import glob
 import shutil
+import pandas as pd
 import pyinputplus as pyip
 
 # SEARCH FUNCTION
@@ -78,6 +79,12 @@ def segregateFile(path):
 def mergeFile(path, extension):
 
     list_of_files = [i for i in glob.glob('*' + extension)]
+    
+    # CSV file merge
+    if extension == 'csv':
+    
+        mergedFile = pd.concat([pd.read_csv(f) for f in list_of_files])
+        mergedFile.to_csv("Merged_{}.{}".format(extension, extension), index=False, encoding='utf-8')
         
     
 # DRIVER FUNCTION
