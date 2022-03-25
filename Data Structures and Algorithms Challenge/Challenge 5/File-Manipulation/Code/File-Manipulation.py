@@ -91,6 +91,14 @@ def mergeFile(path, extension):
     
         mergedFile = pd.concat([pd.read_excel(f) for f in list_of_files])
         mergedFile.to_excel("Merged_{}.{}".format(extension, extension), index=False, encoding='utf-8')
+    
+    # txt file merge
+    elif extension == 'txt':
+    
+        with open("Merged_{}.{}".format(extension, extension), 'w') as mergedFile:
+            for i in list_of_files:
+                with open(i, encoding="utf-8", errors='ignore') as infile:
+                    mergedFile.write(infile.read())
         
     
 # DRIVER FUNCTION
