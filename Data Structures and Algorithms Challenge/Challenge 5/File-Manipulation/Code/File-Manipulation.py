@@ -3,6 +3,7 @@
 import os
 import glob
 import shutil
+import PyPDF2
 import pandas as pd
 import pyinputplus as pyip
 
@@ -99,6 +100,14 @@ def mergeFile(path, extension):
             for i in list_of_files:
                 with open(i, encoding="utf-8", errors='ignore') as infile:
                     mergedFile.write(infile.read())
+                    
+    # pdf file merge                
+    elif extension == 'pdf':
+    
+        mergedFile = PyPDF2.PdfFileMerger()
+        for pdf in list_of_files:
+            mergedFile.append(PyPDF2.PdfFileReader(pdf, 'rb'))
+        mergedFile.write("Merged_{}.{}".format(extension, extension))
         
     
 # DRIVER FUNCTION
