@@ -1,0 +1,9 @@
+FILE MANIPULATION ALGORITHM:
+
+1) In this application, we will be performing the 4 operations:
+	- Searching a file in a given path
+	- Sorting files in a given path
+	- Segregating files based on file extensions and grouping them
+	- Merging files in a given path based on file extension
+
+
