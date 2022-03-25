@@ -6,12 +6,20 @@ FILE MANIPULATION ALGORITHM:
    - Segregating files based on file extensions and grouping them
    - Merging files in a given path based on file extension
    
+   
 2) SEARCHING:
    - For search files in a given path, we ask the user for extension based search or file name based search as criteria.
    - We use the LIST data structure for storing the list of files matching the criteria.
    - The extension based search makes use of glob (global) module which uses STRING data structure just like regex.
    - The file name based search makes use of walk method using TREE data structure. It generates the file names in a directory TREE by walking the TREE either top-down or bottom-up. 
-	 For each directory in the TREE rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
+	For each directory in the TREE rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
 
 
+3) SORTING:
+   - For sorting files in a given path, we ask the user for sorting based on file name, file size or file modified time as criteria.
+   - We use the LIST data structure for storing the list of files in order after sorting process.
+   - We use the glob (global) module which uses STRING data structure just like regex.
+   - For file name based sort, we sort them according to the file names alphabetically using glob.
+   - For file size and file time based sort, the files are filtered by the above process.
+    The sorting in LIST happens using the key based on the file size and the modified time stamp in ascending order.
 
