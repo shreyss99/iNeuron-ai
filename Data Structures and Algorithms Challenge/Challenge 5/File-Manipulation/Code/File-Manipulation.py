@@ -97,14 +97,14 @@ def main():
         print("Do you want to search by extension or by file name?")
         print("1 - Search by Extension")
         print("2 - Search by File Name")
-        criteria = int(input("Choose one of the above 4 options: "))
+        criteria = pyip.inputInt(prompt="Choose one of the above 2 options: ", greaterThan=0, lessThan=3)
         
         if criteria == 1:
-            extension = input("Enter the file extension: ")
+            extension = pyip.inputStr(prompt="Enter the file extension: ")
             result = searchFile(path, extension)
             
         elif criteria == 2:
-            searchFileName = input("Enter the name of the file to be searched: ")
+            searchFileName = pyip.inputStr(prompt="Enter the name of the file to be searched: ")
             result = searchFile(path, searchFileName)
             
         print()
@@ -122,7 +122,7 @@ def main():
         print("1 - Sort by File Name")
         print("2 - Sort by File Size")
         print("3 - Sort by File Time")
-        criteria = int(input("Choose one of the above 3 options: "))
+        criteria = pyip.inputInt(prompt="Choose one of the above 3 options: ", greaterThan=0, lessThan=4)
         
         result = sortFile(path, criteria)
             
