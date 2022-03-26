@@ -78,12 +78,12 @@ def segregateFile(path):
             
 
 def mergeFile(path, extension):
-
+    
     list_of_files = [i for i in glob.glob('*' + extension)]
     
     # CSV file merge
     if extension == 'csv':
-    
+
         mergedFile = pd.concat([pd.read_csv(f) for f in list_of_files])
         mergedFile.to_csv("Merged_{}.{}".format(extension, extension), index=False, encoding='utf-8')
         
@@ -95,7 +95,7 @@ def mergeFile(path, extension):
     
     # txt file merge
     elif extension == 'txt':
-    
+        
         with open("Merged_{}.{}".format(extension, extension), 'w') as mergedFile:
             for i in list_of_files:
                 with open(i, encoding="utf-8", errors='ignore') as infile:
@@ -105,8 +105,8 @@ def mergeFile(path, extension):
     elif extension == 'pdf':
     
         mergedFile = PyPDF2.PdfFileMerger()
-        for pdf in list_of_files:
-            mergedFile.append(PyPDF2.PdfFileReader(pdf, 'rb'))
+        for i in list_of_files:
+            mergedFile.append(PyPDF2.PdfFileReader(i, 'rb'))
         mergedFile.write("Merged_{}.{}".format(extension, extension))
         
     
@@ -170,12 +170,14 @@ def main():
     # SEGREGATE FILE PROCESSING
     elif option == 3:
         segregateFile(path)
+        print("Files are segregated into respective folders!")
         
         
     # MERGE FILE PROCESSING
     elif option == 4:
         extension = input("Enter the extension for merging those files: ")
         result = mergeFile(path, extension)
+        print("Files are merged into a single {} file!".format(extension))
 
     # NO OPTION
     else:
