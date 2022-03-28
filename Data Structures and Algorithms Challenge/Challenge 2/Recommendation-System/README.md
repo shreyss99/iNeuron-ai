@@ -9,5 +9,12 @@
 - python 3
 - numpy
 - pandas
+- scipy
+- surprise
 
 ***
+
+### How to use it:
+
+-  The user has to download the Netflix dataset.
+-  We have used the combined_data_1.txt file for developing the recommender system from the entire dataset.
