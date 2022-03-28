@@ -4,3 +4,10 @@
 -  The recommender system will recommend 10 movies based on the user ratings for the movies.
 
 ***
+
+### Requirements:
+- python 3
+- numpy
+- pandas
+
+***
