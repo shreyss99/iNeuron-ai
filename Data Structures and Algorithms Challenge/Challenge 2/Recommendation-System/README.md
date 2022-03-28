@@ -18,5 +18,7 @@
 
 -  The user has to download the Netflix dataset.
 -  We have used the data from below location.
+   ```
    [Netflix-Dataset](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data?resource=download)
+   ```
 -  We have used the 'combined_dataset_1.txt' and the 'movie_titles.csv' for development the recommender system from the entire dataset.
