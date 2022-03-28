@@ -17,4 +17,6 @@
 ### How to use it:
 
 -  The user has to download the Netflix dataset.
--  We have used the combined_data_1.txt file for developing the recommender system from the entire dataset.
+-  We have used the data from below location for developing the recommender system from the entire dataset.
+   [Netflix-Dataset](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data?resource=download)
+-  
