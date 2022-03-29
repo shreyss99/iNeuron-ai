@@ -33,3 +33,17 @@ DATA PREPARATION:
 
 
 RECOMMENDATION:
+
+12) We read in the movie titles file which has the values of Movie ID, year and the name.
+
+13) We create a pivot table using the cleaned dataset with values as the ratings, columns as the Movie ID and index as Customer ID.
+
+14) The user inputs the movie of thier choice.
+
+15) We calculate the index of the input movie as the target movie.
+
+16) Using the Pearson's correlation co-efficient measure we compute pairwise correlation between rows or columns of dataframe objects
+
+17) We then finally sort the values in the new dataframe (correlation dataframe) in a descending order and map the movies with corrleation matching them.
+
+18) We print the 2nd to 11th movie names as output because every movie will have perfect correlation with itself and so we ignore it.
