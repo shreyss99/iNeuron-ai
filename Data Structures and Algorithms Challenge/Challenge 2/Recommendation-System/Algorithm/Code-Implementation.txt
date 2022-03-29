@@ -1,0 +1,11 @@
+The Recommender System as been implemented using the basic Pthon data structures of NUMPY ARRAYS and PANDAS DATAFRAMES.
+
+1) We first load the Netflix dataset which consists of the Customer ID and the rating given to the movie.
+
+2) Along with this we import the numpy, pandas and matplotlib libraries.
+
+3) We then obtain the proportion of the ratings from (1 to 5) and group it rating-wise. Based on this we plot a horizontal ba chart to visualise it.
+	
+4) We see that the score tends to be relatively positive (> 3). 
+   This may be because unhappy customers tend to just leave instead of making an effort to rate. 
+   We can keep this in mind that low-rating movies mean they’re generally really bad.
