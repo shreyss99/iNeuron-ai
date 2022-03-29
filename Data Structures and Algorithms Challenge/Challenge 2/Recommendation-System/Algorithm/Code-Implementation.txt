@@ -24,3 +24,12 @@ DATA PREPARATION:
    - Remove the customer who gives too less notice (relatively less active)
    
 8) We have decided on a threshold value for ignoring the above entries - 80% quantile value.
+
+9) Based on the count and mean metrics we group by the movies and customers.
+
+10) Using the 80% quantile value of the count, we discard all the movies with count less than the threshold value.
+
+11) Once done, we drop the discarded values from the original dataset to obtain a smaller and more strong dataset.
+
+
+RECOMMENDATION:
