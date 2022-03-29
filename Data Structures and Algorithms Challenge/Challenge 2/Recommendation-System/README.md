@@ -9,6 +9,7 @@
 - python 3
 - numpy
 - pandas
+- matplotlib
 - scipy
 - surprise
 
