@@ -9,3 +9,18 @@ The Recommender System as been implemented using the basic Pthon data structures
 4) We see that the score tends to be relatively positive (> 3). 
    This may be because unhappy customers tend to just leave instead of making an effort to rate. 
    We can keep this in mind that low-rating movies mean they’re generally really bad.
+   
+   
+DATA PREPARATION:
+
+5) The Movie ID column is not proper. We improve this by first creating an array with the correct length, then adding the entire array as a column in the main dataframe.
+   We achieve this by using NumPy ARRAY data structure and add this to the Pandas DATAFRAME.
+   
+6) The dataset is super huge. Therefore, we need to reduce the data volume by improving data quality.
+
+7) We can use these two approaches:
+
+   - Delete the movie with too many reviews (they are relatively unpopular)
+   - Remove the customer who gives too less notice (relatively less active)
+   
+8) We have decided on a threshold value for ignoring the above entries - 80% quantile value.
